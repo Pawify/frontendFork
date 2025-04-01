@@ -3,7 +3,10 @@ import './App.css'
 import catdog404 from '/catdog404.png'
 
 function App() {
-  // const { softBeige } = theme.colors;
+  // EN QUE CARPETA METER ERROR 4040
+  // ESTILOS CSS TODOS EN APP.CC?¿
+  // USAR ALGUNA LIBRERÍA DE ANIMACIONES,
+  // EN CASO DE QUE SI DEBERIAMOS USAR LA MISMA PARA NO MEZCLAR LIBRERÍA
 
   return (
       <section className="section-404">
