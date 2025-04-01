@@ -1,34 +1,24 @@
-import { useState } from 'react'
-import reactLogo from './assets/react.svg'
-import viteLogo from '/vite.svg'
+import theme from "./constants/themes";
 import './App.css'
+import catdog404 from '/catdog404.png'
 
 function App() {
-  const [count, setCount] = useState(0)
+  // const { softBeige } = theme.colors;
 
   return (
-    <>
-      <div>
-        <a href="https://vite.dev" target="_blank">
-          <img src={viteLogo} className="logo" alt="Vite logo" />
-        </a>
-        <a href="https://react.dev" target="_blank">
-          <img src={reactLogo} className="logo react" alt="React logo" />
-        </a>
-      </div>
-      <h1>Vite + React</h1>
-      <div className="card">
-        <button onClick={() => setCount((count) => count + 1)}>
-          count is {count}
-        </button>
-        <p>
-          Edit <code>src/App.jsx</code> and save to test HMR
-        </p>
-      </div>
-      <p className="read-the-docs">
-        Click on the Vite and React logos to learn more
-      </p>
-    </>
+      <section className="section-404">
+        <div className="container-img-404">
+          <img src={catdog404} alt="cat-dog-404" className="img-404" />
+        </div>
+        <div className="section-div-404">
+            <h1 className="h1-404" >404</h1>
+            <h2 className="h2-404" >Page not found</h2>
+            <p className="p-404" >The page you are looking for no longer exists. Perhaps you can return back to the site's homepage and see if you can find what you are looking for.</p>
+            <div className="button-404" >
+              <a href="a-404">Back home</a>
+            </div>
+        </div>
+    </section>
   )
 }
 
