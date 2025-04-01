@@ -1,7 +1,13 @@
+//Ejemplo de como usar las variable de colores
+import theme from "./constants/themes"; //importacion
+
 function App() {
+  const { softBeige } = theme.colors; //desestructuracion
+
   return (
     <div>
-      <p>Changes</p>
+      {/* implementacion */}
+      <p style={{ color: softBeige }}>Changes</p> 
     </div>
   );
 }
