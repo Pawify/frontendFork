@@ -1,87 +1,11 @@
 #root {
-  margin: 0;
-  padding: 0;
-  box-sizing: border-box;
-}
-
-
-.img-404 {
-  max-width: 80%;
-  position: relative;
-  top: 3.4rem;
-}
-
-.container-img-404{
-  display: flex;
-  justify-content: center;
-  
-}
-
-section.section-404{
-  /* transition: background 0.3s, border 0.3s, border-radius 0.3s, box-shadow 0.3s; */
-  /* padding: 5rem 3rem 5rem 3rem; */
-  border-radius: 18px;
-  max-width: 500px;
-  font-size: 20px;
-  margin: 180px auto;
-}
-
-.section-div-404{
-  display: flex;
-  flex-direction: column;
-  justify-content: center;
-  align-items: center;
+  max-width: 1280px;
+  margin: 0 auto;
+  padding: 2rem;
   text-align: center;
-  justify-content: space-evenly;
-  padding: 5rem 3rem 5rem 3rem;
-  background-color: #f5f6f7;
-  border-radius: 18px;
-  box-shadow: 0px 30px 60px 0px rgba(0, 0, 0, 0.1);
 }
 
-.h1-404{
-  color: #767683;
-  font-size: 4rem;
-  line-height: 0;
-}
-
-.h2-404{
-  line-height: 0;
-}
-
-.p-404{
-  color: #5f5f6d;
-}
-
-.button-404 a {
-  background-color: #ffcc00; /* Yellow color */
-  color: rgb(12, 8, 8); /* Text color */
-  padding: 10px 20px; /* Padding around the text */
-  text-decoration: none; /* Remove underline */
-  border-radius: 18px; /* Rounded corners */
-  font-size: 16px;
-  transition: background-color 0.3s ease; /* Smooth hover effect */
-  font-weight: bold;
-}
-
-.button-404 a:hover {
-  background-color: #e6b800; /* Darker yellow on hover */
-}
-
-.button-404{
-  display: flex;
-  justify-content: start;
-  align-items: center;
-  gap: 30px;
-}
-
-@media (max-width: 600px) {
-  .img-404 { /* Reduce the image size on smaller screens */
-    top: 2.5rem; /* Adjust the positioning for smaller screens */
-  }
-}
-
-/* .logo {
+.logo {
   height: 6em;
   padding: 1.5em;
   will-change: filter;
@@ -115,5 +39,4 @@ section.section-404{
 
 .read-the-docs {
   color: #888;
-} */
-
+}
