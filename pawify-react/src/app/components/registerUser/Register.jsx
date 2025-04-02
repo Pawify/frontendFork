@@ -3,6 +3,8 @@ import { Eye, EyeOff, PawPrint } from "lucide-react";
 import theme from "../../../constants/themes";
 import { useForm } from "react-hook-form";
 import { passwordRegex } from "@/constants/regex";
+import { Link } from "react-router-dom";
+
 
 export default function Register() {
   const {
@@ -195,9 +197,9 @@ export default function Register() {
 
         <div className="mt-4 text-center text-xs" style={{ color: deepRed }}>
           ¿Ya tienes una cuenta?{" "}
-          <a href="#" className="text-blue-500 hover:underline">
-            Inicia sesión
-          </a>
+          <Link to="/login" className="text-blue-500 hover:underline">
+              Inicia sesión
+          </Link>
         </div>
       </div>
     </div>
