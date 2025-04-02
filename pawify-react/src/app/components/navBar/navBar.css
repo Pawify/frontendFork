@@ -4,7 +4,81 @@ nav {
     top: 0;
     left: 0;
     width: 100%;
-    height: 10%;
-    background-color: #333;
+    height: 15%;
     z-index: 1000;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 0 40px;
+    gap: 10px;
+}
+.section-one {
+    background-color: #7893d1;
+    height: 100%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+.section-two {
+    width: 60%;
+}
+form {
+    display: flex;
+    align-items: center;
+    width: 100%;
+    height: 45px;
+}
+input {
+    width: 90%;
+    border-top-left-radius: 20px;
+    border-bottom-left-radius: 20px;
+    border: none;
+    outline: none;
+    background-color: white;
+    height: 100%;
+    padding-left: 20px;
+}
+#search-btn {
+    width: 10%;
+    height: 100%;
+    border-top-right-radius: 20px;
+    border-bottom-right-radius: 20px;
+    font-size: 1px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+#search-svg {
+    width: 20px;
+    height: 20px;
+}
+ul {
+    width: 100%;
+    display: flex;
+    padding-top: 10px;
+    gap: 20px;
+}
+li {
+    transition: color 0.5s ease;                                         
+}
+li:hover {
+    color: white;
+}
+.section-three {
+    padding-top: 7px;
+}
+.hashtag {
+    padding-top: 12px;
+}
+#profile-btn {
+    height: 45px;
+    width: 45px;
+    border-radius: 50%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+#profile-svg {
+    width: 30px;
+    height: 30px;
 }

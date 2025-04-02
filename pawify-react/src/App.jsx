@@ -1,5 +1,6 @@
 import './App.css'
 import NavBar from './app/components/navBar/navBar'
+import Register from "./app/components/registerUser/Register";
 
 
 function App() {
@@ -11,4 +12,4 @@ function App() {
   )
 }
 
-export default App
+export default App;
