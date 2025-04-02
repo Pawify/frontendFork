@@ -3,15 +3,17 @@ import './App.css'
 import catdog404 from '/catdog404.png'
 
 function App() {
-  // EN QUE CARPETA METER ERROR 404
+  // DUDAS
   // ESTILOS CSS TODOS EN APP.CC?¿
   // USAR ALGUNA LIBRERÍA DE ANIMACIONES,
   // EN CASO DE QUE SI DEBERIAMOS USAR LA MISMA PARA NO MEZCLAR LIBRERÍA
 
-  return (
+  // EN QUE CARPETA METER ERROR 404
+  const Error404 = ({img}) => {
+    return (
       <section className="section-404">
         <div className="container-img-404">
-          <img src={catdog404} alt="cat-dog-404" className="img-404" />
+          <img src={img} alt="cat-dog-404" className="img-404" />
         </div>
         <div className="section-div-404">
             <h1 className="h1-404" >404</h1>
@@ -22,6 +24,12 @@ function App() {
             </div>
         </div>
     </section>
+    )
+  }
+  
+
+  return (
+      <Error404 img={catdog404}/>
   )
 }
 
