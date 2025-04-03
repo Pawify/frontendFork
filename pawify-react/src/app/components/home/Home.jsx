@@ -4,7 +4,7 @@ import "../home/Home.css";
 
 export default function Home() {
   //estilos colores
-  const { background, primary, secondary, softOrange, softGrey, vibrantBlue } =
+  const { background, primary, secondary, accent, softGrey, vibrantBlue } =
     theme.colors;
   return (
     <>
@@ -34,7 +34,7 @@ export default function Home() {
             <a href="">
               <button
                 className="border-none rounded-[20px] px-5 py-1 mt-4 mb-2 cursor-pointer"
-                style={{ backgroundColor: softOrange, fontSize: "12px" }}
+                style={{ backgroundColor: accent, fontSize: "12px" }}
               >
                 {texts.adoptionTitle}
               </button>
@@ -80,7 +80,7 @@ export default function Home() {
             </div>
             <div
               className="service-banner-cc whitespace-pre-line border-none rounded-[10px] px-5 py-2 mr-3"
-              style={{ backgroundColor: softOrange }}
+              style={{ backgroundColor: accent }}
             >
               <img src="null" alt="" className="img-service" />
               <h3
@@ -150,7 +150,7 @@ export default function Home() {
           <a href="">
             <button
               className="border-none rounded-[20px] px-5 py-1 mt-4 mb-2 cursor-pointer"
-              style={{ backgroundColor: softOrange, fontSize: "12px" }}
+              style={{ backgroundColor: accent, fontSize: "12px" }}
             >
               {texts.adoptionTitle}
             </button>
