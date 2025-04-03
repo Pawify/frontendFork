@@ -2,37 +2,46 @@ import React, { useState } from "react";
 import { Eye, EyeOff, PawPrint } from "lucide-react";
 import theme from "../../../constants/themes";
 import { useForm } from "react-hook-form";
-import { passwordRegex } from "@/constants/regex";
+import { Link, useNavigate } from "react-router-dom";
+import { zodResolver } from "@hookform/resolvers/zod";
+import { schema } from "./registerSchema";
+import toast, { Toaster } from "react-hot-toast";
 
 export default function Register() {
   const {
     register,
     handleSubmit,
     formState: { errors },
-    watch,
-  } = useForm();
+    reset,
+  } = useForm({
+    resolver: zodResolver(schema),
+  });
 
-  const registerProperties = {
-    name: "",
-    email: "",
-    password: "",
-    confirmPassword: "",
-    terms: false,
-  };
-  const [data, setData] = useState(registerProperties);
   const [showPassword, setShowPassword] = useState(false);
   const [showConfirmPassword, setShowConfirmPassword] = useState(false);
+  const [progress, setProgress] = useState(100);
   const { background, primary, accent, deepRed } = theme.colors;
-
-  const validatePasswords = () => {
-    const password = watch("password");
-    const confirmPassword = watch("confirmPassword");
-
-    return password === confirmPassword || "Las contraseñas no coinciden";
-  };
+  const navigate = useNavigate();
 
   const onSubmit = (data) => {
     console.log(data);
+
+    toast.success("!Registro completado!", {
+      icon: "🐾",
+    });
+
+    reset();
+
+    let currenProgress = 100;
+    const interval = setInterval(() => {
+      currenProgress -= 2;
+      setProgress(currenProgress);
+
+      if (currenProgress <= 0) {
+        clearInterval(interval);
+        navigate("/login");
+      }
+    }, 50);
   };
 
   return (
@@ -68,7 +77,7 @@ export default function Register() {
               type="text"
               placeholder="Tu nombre"
               className="w-full p-2 mt-2 border rounded-md"
-              {...register("name", { required: "Este campo es obligatorio" })}
+              {...register("name")}
             />
             {errors.name && (
               <p className="text-red-500 text-xs">{errors.name.message}</p>
@@ -88,7 +97,7 @@ export default function Register() {
               type="email"
               placeholder="tucorreo@email.com"
               className="w-full p-2 mt-2 border rounded-md"
-              {...register("email", { required: "Este campo es obligatorio" })}
+              {...register("email")}
             />
             {errors.email && (
               <p className="text-red-500 text-xs">{errors.email.message}</p>
@@ -110,13 +119,7 @@ export default function Register() {
                 placeholder="••••••••"
                 className="w-full p-2 mt-2 border rounded-md"
                 maxLength={15}
-                {...register("password", {
-                  required: "Este campo es obligatorio",
-                  pattern: {
-                    value: passwordRegex,
-                    message: "La contraseña debe tener al menos 8 caracteres, una mayuscula, una minuscula y un número"
-                  }
-                })}
+                {...register("password")}
               />
               <button
                 type="button"
@@ -148,10 +151,7 @@ export default function Register() {
                 placeholder="••••••••"
                 className="w-full p-2 mt-2 border rounded-md"
                 maxLength={15}
-                {...register("confirmPassword", {
-                  required: "Este campo es obligatorio",
-                  validate: validatePasswords,
-                })}
+                {...register("confirmPassword")}
               />
               <button
                 type="button"
@@ -174,7 +174,7 @@ export default function Register() {
               name="terms"
               type="checkbox"
               className="mr-2"
-              {...register("terms", { required: "Debes aceptar los términos" })}
+              {...register("terms")}
             />
             <label htmlFor="terms" className="text-sm">
               Acepto los términos y condiciones
@@ -195,11 +195,22 @@ export default function Register() {
 
         <div className="mt-4 text-center text-xs" style={{ color: deepRed }}>
           ¿Ya tienes una cuenta?{" "}
-          <a href="#" className="text-blue-500 hover:underline">
+          <Link to="/login" className="text-blue-500 hover:underline">
             Inicia sesión
-          </a>
+          </Link>
         </div>
+
+        {progress < 100 && (
+          <div className="w-full max-w-md mt-4 h-2 bg-gray-300 rounded-full overflow-hidden">
+            <div
+              className="h-full bg-orange-500 transition-all"
+              style={{ width: `${progress}%` }}
+            />
+          </div>
+        )}
       </div>
+
+      <Toaster position="top-center" />
     </div>
   );
 }
