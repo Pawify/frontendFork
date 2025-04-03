@@ -1,6 +1,6 @@
 export const texts = {
     title: "Haciendo \nMatch entre \nPersonas y \nMascotas",
-    subtitle: "En Pawify, creemos que cada animal merece un hogar lleno de amor",
+    subtitle: "En Pawify, creemos que cada animal \nmerece un hogar lleno de amor",
     adoptionTitle: "Adopta ahora",
     freeServiceTitle: "El servicio es \ncompletamente \ngratuito y \nsiempre lo será.",
     freeServiceText: "No aceptamos ni solicitamos dinero por ningún animal.",

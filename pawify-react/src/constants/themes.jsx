@@ -10,6 +10,7 @@ const theme = {
     softBeige: "#f2e3bc", // beige claro
     softGrey: "#f2f6f9", // gris claro
     vibrantBlue: "#79c5e6", //azul vibrante
+    softOrange: '#edd140', //naranja suave
   },
 };
 
