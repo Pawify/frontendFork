@@ -20,6 +20,8 @@ export default function Register() {
   const [showPassword, setShowPassword] = useState(false);
   const [showConfirmPassword, setShowConfirmPassword] = useState(false);
   const [progress, setProgress] = useState(100);
+  const [apiError, setApiError] = useState(null); 
+  const [isLoading, setIsLoading] = useState(false); 
   const { background, primary, accent, deepRed } = theme.colors;
   const navigate = useNavigate();
 
