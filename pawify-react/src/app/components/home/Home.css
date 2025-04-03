@@ -1,0 +1,82 @@
+.Home {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: left;
+    gap: 30px;
+    width: 90%;
+    margin: 0 auto;
+  }
+  
+  
+  .hero-content {
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+    align-items: left;
+    gap: 5px;
+  }
+  .hero-content-left {
+    width: 50%;
+    height: auto;
+  }
+  .hero-content-right {
+    width: 50%;
+    height: auto;
+  }
+  .img-hero{
+      margin: 10px;
+      width: 90%;
+      height: 90%;
+  }
+  
+  
+  .service-banner {
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+    align-items: center;
+    flex-wrap: nowrap;
+  }
+  .service-banner-card {
+    width: 100%;
+    height: 250px;
+  }
+  .service-banner-cc {
+    width: 100%;
+    height: auto;
+  }
+  .img-service{
+      width:40%;
+      height: 40%;
+      border:1px solid red;
+  }
+  
+  
+  .numbers-banner {
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+    align-items: center;
+    text-align: right;
+    gap: 5px;
+    width: 100%;
+    height: 250px;
+  }
+  .numbers-banner-card{
+      border:1px solid black;
+  }
+  .img-numbers{
+      width:100%;
+      height: 100%;
+  }
+  .adoption-banner{
+      display: flex;
+      flex-direction: column;
+      justify-content: right;
+      align-items: center;
+      gap: 5px;
+      width: 100%;
+      height: 250px;
+  }
+  

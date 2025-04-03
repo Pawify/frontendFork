@@ -8,6 +8,8 @@ const theme = {
     olive: "#bfc47d", // verde oliva claro
     bronze: "#c19875", // bronce suave
     softBeige: "#f2e3bc", // beige claro
+    softGrey: "#f2f6f9", // gris claro
+    vibrantBlue: "#79c5e6", //azul vibrante
   },
 };
 
