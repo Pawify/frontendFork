@@ -17,7 +17,7 @@ const NavBar = () => {
             className="search-bar"
             placeholder="Search..."
           />
-          <button id='search-btn' style={{ backgroundColor: theme.colors.accent }}>
+          <button id='search-btn' style={{ backgroundColor: theme.colors.softOrange }}>
             {searchSvg}
           </button>
         </form>
@@ -31,7 +31,7 @@ const NavBar = () => {
         </ul>
       </div>
       <div className="section-three">
-        <button id='profile-btn' style={{ backgroundColor: theme.colors.accent }}>
+        <button id='profile-btn' style={{ backgroundColor: theme.colors.softOrange }}>
           {profileSvg}
         </button>
         <p className="hashtag">#AdoptDontShop</p>

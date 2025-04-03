@@ -22,7 +22,7 @@ export default function Register() {
   const [data, setData] = useState(registerProperties);
   const [showPassword, setShowPassword] = useState(false);
   const [showConfirmPassword, setShowConfirmPassword] = useState(false);
-  const { background, primary, accent, deepRed } = theme.colors;
+  const { background, primary, softOrange, deepRed } = theme.colors;
 
   const validatePasswords = () => {
     const password = watch("password");
@@ -187,7 +187,7 @@ export default function Register() {
           <button
             type="submit"
             className="w-full text-white py-2 px-4 rounded-md flex items-center justify-center gap-2"
-            style={{ backgroundColor: accent, cursor: "pointer" }}
+            style={{ backgroundColor: softOrange, cursor: "pointer" }}
           >
             <PawPrint size={20} /> Registrarse
           </button>
