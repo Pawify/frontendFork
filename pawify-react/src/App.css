@@ -1,3 +1,9 @@
+body {
+  /*Fuente Euclid general*/
+  font-family: 'Euclid Circular B', sans-serif; 
+  /*Fuente Core Rhino titulos*/
+  /*font-family: 'Core Rhino 55 Medium', sans-serif;*/                                         
+}
 #root {
   max-width: 1280px;
   margin: 0 auto;
