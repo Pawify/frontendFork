@@ -1,6 +1,6 @@
 import catdog404 from '/catdog404.png'
 
-export const NotFound = () => {
+export  default function  NotFound () {
     return (
       <section className="max-w-md mx-auto my-44 text-lg">
         <div className="flex justify-center">

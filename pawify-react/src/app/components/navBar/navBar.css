@@ -1,0 +1,247 @@
+/*Estilos de NavBar creado por Jhonny Bracho*/
+#nav {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 15%;
+  z-index: 1000;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 0 40px;
+  gap: 10px;
+}
+.section-one {
+  background-color: #7893d1;
+  height: 100%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+.section-two {
+  width: 60%;
+}
+.form {
+  display: flex;
+  align-items: center;
+  width: 100%;
+  height: 45px;
+}
+.search-bar {
+  width: 90%;
+  border-top-left-radius: 20px;
+  border-bottom-left-radius: 20px;
+  border: none;
+  outline: none;
+  background-color: white;
+  height: 100%;
+  padding-left: 20px;
+}
+#search-btn {
+  width: 10%;
+  height: 100%;
+  border-top-right-radius: 20px;
+  border-bottom-right-radius: 20px;
+  font-size: 1px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+button:hover {
+  cursor: pointer;
+}
+#search-svg {
+  width: 20px;
+  height: 20px;
+}
+.nav-links {
+  width: 100%;
+  display: flex;
+  padding-top: 10px;
+  gap: 20px;
+}
+li {
+  transition: color 0.5s ease;
+}
+li:hover {
+  color: white;
+}
+.section-three {
+  padding-top: 7px;
+}
+.hashtag {
+  padding-top: 12px;
+}
+#profile-btn {
+  height: 45px;
+  width: 45px;
+  border-radius: 50%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+#profile-svg {
+  width: 30px;
+  height: 30px;
+}
+
+/*Responsive para telefonos*/
+@media (max-width: 768px) {
+  #nav {
+    flex-direction: column;
+    align-items: flex-start;
+    height: auto;
+    padding: 0 5px 5px 5px;
+    gap: 10px;
+  }
+
+  .section-one {
+    width: 100%;
+    justify-content: center;
+  }
+
+  .section-two {
+    width: 100%;
+  }
+
+  .form {
+    width: 100%;
+    flex-direction: row;
+  }
+
+  .search-bar {
+    width: 80%;
+    font-size: 14px;
+  }
+
+  #search-btn {
+    width: 20%;
+  }
+
+  .nav-links {
+    flex-direction: row;
+    gap: 20px;
+    padding-top: 10px;
+    width: 100%;
+    padding-left: 10px;
+  }
+
+  .li {
+    font-size: 14px;
+  }
+
+  .section-three {
+    width: 100%;
+    padding-top: 0;
+    display: flex;
+    justify-content: flex-end;
+    align-items: center;
+    font-size: 14px;
+  }
+
+  #profile-btn {
+    height: 30px;
+    width: 30px;
+    position: absolute;
+    top: 105px;
+  }
+
+  #profile-svg {
+    width: 20px;
+    height: 20px;
+  }
+  .hashtag {
+    display: none;
+  }
+}
+
+/*Responsive para tablets*/
+@media (min-width: 769px) and (max-width: 1024px) {
+  #nav {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 15%;
+    z-index: 1000;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 0 5px;
+    gap: 10px;
+  }
+}
+
+/*Responsive para telefonos pequenos*/
+@media (max-width: 480px) {
+  #nav {
+    flex-direction: column;
+    align-items: flex-start;
+    height: auto;
+    padding: 0;
+    gap: 10px;
+  }
+
+  .section-one {
+    width: 100%;
+    justify-content: center;
+  }
+
+  .section-two {
+    width: 100%;
+  }
+
+  .form {
+    width: 100%;
+    flex-direction: row;
+  }
+
+  .search-bar {
+    width: 80%;
+    font-size: 12px;
+    height: 80%;
+  }
+
+  #search-btn {
+    width: 20%;
+    height: 80%;
+  }
+
+  .nav-links {
+    flex-direction: row;
+    gap: 10px;
+    padding-top: 10px;
+    width: 100%;
+    padding-left: 5px;
+  }
+
+  .li {
+    font-size: 12px;
+  }
+
+  .section-three {
+    width: 100%;
+    padding-top: 0;
+    display: flex;
+    justify-content: flex-end;
+    align-items: center;
+    font-size: 14px;
+  }
+
+  #profile-btn {
+    height: 20px;
+    width: 20px;
+    position: absolute;
+    top: 108px;
+    right: 2px;
+  }
+
+  #profile-svg {
+    width: 15px;
+    height: 15px;
+  }
+  .hashtag {
+    display: none;
+  }
+}

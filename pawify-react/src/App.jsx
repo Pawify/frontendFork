@@ -1,14 +1,23 @@
-// import theme from "./constants/themes";
-import './App.css'
-import { NotFound } from "./app/errors/NotFound";
-
+import React from "react";
+import { BrowserRouter as Router, Route, Routes } from "react-router-dom";
+import Register from "./app/components/registerUser/Register";
+import Login from "./app/components/login/Login";
+import Home from "./app/components/pages/Home";
+import  NotFound  from "./app/errors/NotFound";
 
 function App() {
-   {/* Ruta para manejar el 404, debe ir al final para capturar todas las rutas no definidas */}
-  //  <Route path="*" element={<NotFound />} />
   return (
-      <NotFound/>
-  )
+    <>
+      <Router>
+        <Routes>
+          <Route path="/" element={<Home />} />
+          <Route path="/register" element={<Register />} />
+          <Route path="/login" element={<Login />} />
+          <Route path="*" element={<NotFound />} />
+        </Routes>
+      </Router>
+    </>
+  );
 }
 
-export default App
+export default App;
