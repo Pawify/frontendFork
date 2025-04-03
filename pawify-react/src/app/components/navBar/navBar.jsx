@@ -48,7 +48,7 @@ const NavBar = () => {
         >
           {profileSvg}
         </button>
-        <p className="hashtag">#AdoptDontShop</p>
+        <p className="hashtag font-semibold">#AdoptDontShop</p>
       </div>
     </nav>
   );

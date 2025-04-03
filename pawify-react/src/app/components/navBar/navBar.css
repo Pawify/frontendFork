@@ -63,6 +63,7 @@ button:hover {
 }
 li {
   transition: color 0.5s ease;
+  font-weight: 600;
 }
 li:hover {
   color: white;

@@ -1,15 +1,24 @@
 import React from "react";
-import Home from './app/components/home/Home';
 import { BrowserRouter as Router, Route, Routes } from "react-router-dom";
 import Register from "./app/components/registerUser/Register";
 import Login from "./app/components/login/Login";
 import Home from "./app/components/pages/Home";
+import NavBar from "./app/components/navBar/navBar";
+
+
 
 function App() {
   return (
     <>
-      <NavBar />
-      <Register/>
+      <Router>
+        <NavBar />
+        <Routes>
+          <Route path="/navbar" element={<NavBar/>} />
+          <Route path="/" element={<Home />} />
+          <Route path="/register" element={<Register />} />
+          <Route path="/login" element={<Login />} />
+        </Routes>
+      </Router>
     </>
   );
 }
