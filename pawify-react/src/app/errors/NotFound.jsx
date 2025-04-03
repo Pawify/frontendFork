@@ -1,6 +1,10 @@
+import theme from '@/constants/themes';
 import catdog404 from '/catdog404.png'
 
 export  default function  NotFound () {
+
+  const { accent } = theme.colors;
+
     return (
       <section className="max-w-md mx-auto my-44 text-lg">
         <div className="flex justify-center">
@@ -16,8 +20,9 @@ export  default function  NotFound () {
           </p>
           <div className="flex items-center gap-8 mt-5">
             <a
+              style={{ backgroundColor: accent}}
               href="/"
-              className="bg-yellow-400 text-black py-2 px-5 mt-5 rounded-2xl font-semibold transition-colors hover:bg-yellow-500"
+              className="text-black py-2 px-5 mt-5 rounded-2xl font-semibold transition-opacity hover:opacity-90"
             >
               Back home
             </a>
