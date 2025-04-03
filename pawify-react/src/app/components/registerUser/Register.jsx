@@ -3,6 +3,8 @@ import { Eye, EyeOff, PawPrint } from "lucide-react";
 import theme from "../../../constants/themes";
 import { useForm } from "react-hook-form";
 import { passwordRegex } from "@/constants/regex";
+import api from "../../../api/axios";
+import { Link } from "react-router-dom";
 
 export default function Register() {
   const {
@@ -22,6 +24,8 @@ export default function Register() {
   const [data, setData] = useState(registerProperties);
   const [showPassword, setShowPassword] = useState(false);
   const [showConfirmPassword, setShowConfirmPassword] = useState(false);
+  const [isLoading, setIsLoading] = useState(false);
+  const [apiError, setApiError] = useState(null);
   const { background, primary, accent, deepRed } = theme.colors;
 
   const validatePasswords = () => {
@@ -31,8 +35,43 @@ export default function Register() {
     return password === confirmPassword || "Las contraseñas no coinciden";
   };
 
-  const onSubmit = (data) => {
-    console.log(data);
+  const onSubmit = async (formData) => {
+    try {
+      // Establecemos el estado de carga
+      setIsLoading(true);
+      setApiError(null);
+      
+      // Preparamos los datos para enviar al backend
+      const userData = {
+        username: formData.name,
+        email: formData.email,
+        password: formData.password
+      };
+      
+      // Usamos nuestra instancia de api y la ruta relativa
+      const response = await api.post("/users/api/users/", userData);
+      
+      // Si la petición es exitosa, mostramos un mensaje
+      console.log("Usuario registrado exitosamente:", response.data);
+      
+      alert("¡Registro exitoso! Ya puedes iniciar sesión.");
+      // Reiniciamos el formulario
+      setData(registerProperties);
+      
+    } catch (error) {
+      // Manejamos los errores de la petición
+      console.error("Error al registrar usuario:", error);
+      
+      // Mostramos un mensaje de error específico si está disponible
+      if (error.response && error.response.data) {
+        setApiError(error.response.data.detail || "Error al registrar usuario. Inténtalo de nuevo.");
+      } else {
+        setApiError("Error de conexión. Por favor, verifica tu conexión a internet e inténtalo de nuevo.");
+      }
+    } finally {
+      // Finalizamos el estado de carga independientemente del resultado
+      setIsLoading(false);
+    }
   };
 
   return (
@@ -54,6 +93,13 @@ export default function Register() {
             ¡Únete a nuestra comunidad!
           </h2>
         </div>
+
+        {/* Mostramos errores de la API si existen */}
+        {apiError && (
+          <div className="mb-4 p-2 bg-red-100 border border-red-400 text-red-700 rounded">
+            {apiError}
+          </div>
+        )}
 
         <form onSubmit={handleSubmit(onSubmit)}>
           <div className="mb-4">
@@ -187,17 +233,28 @@ export default function Register() {
           <button
             type="submit"
             className="w-full text-white py-2 px-4 rounded-md flex items-center justify-center gap-2"
-            style={{ backgroundColor: accent, cursor: "pointer" }}
+            style={{ 
+              backgroundColor: accent, 
+              cursor: isLoading ? "wait" : "pointer",
+              opacity: isLoading ? 0.7 : 1 
+            }}
+            disabled={isLoading}
           >
-            <PawPrint size={20} /> Registrarse
+            {isLoading ? (
+              "Procesando..."
+            ) : (
+              <>
+                <PawPrint size={20} /> Registrarse
+              </>
+            )}
           </button>
         </form>
 
         <div className="mt-4 text-center text-xs" style={{ color: deepRed }}>
           ¿Ya tienes una cuenta?{" "}
-          <a href="#" className="text-blue-500 hover:underline">
+          <Link to="/login" className="text-blue-500 hover:underline">
             Inicia sesión
-          </a>
+          </Link>
         </div>
       </div>
     </div>
