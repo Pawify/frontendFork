@@ -1,8 +1,11 @@
 import React from "react";
-import NavBar from "../navBar/navBar";
+import Layout from "../layout/Layout";
 
 const Home = () => {
-  return <NavBar />;
+  return (
+    <Layout>
+    </Layout>
+  );
 };
 
 export default Home;
