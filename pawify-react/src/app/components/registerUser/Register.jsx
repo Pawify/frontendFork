@@ -1,3 +1,18 @@
+{/*
+    Componente: Register
+    Creado: 01/04/2025
+    Autor: kevinDaniel18
+    
+    Descripción: 
+    Componente de pie de registro de la web.
+    
+    Historial de modificaciones:
+    - 01/04/2025: Creación inicial del componente
+    - 05/04/2025: Conexion con el backend nuevo. 
+    - [Fecha]: [Descripción de la modificación]
+*/}
+
+
 import React, { useState } from "react";
 import { Eye, EyeOff, PawPrint } from "lucide-react";
 import theme from "../../../constants/themes";
@@ -6,6 +21,7 @@ import { Link, useNavigate } from "react-router-dom";
 import { zodResolver } from "@hookform/resolvers/zod";
 import { schema } from "./registerSchema";
 import toast, { Toaster } from "react-hot-toast";
+import api from '../../../api/axios'; 
 
 export default function Register() {
   const {
@@ -25,25 +41,49 @@ export default function Register() {
   const { background, primary, accent, deepRed } = theme.colors;
   const navigate = useNavigate();
 
-  const onSubmit = (data) => {
-    console.log(data);
-
-    toast.success("!Registro completado!", {
-      icon: "🐾",
-    });
-
-    reset();
-
-    let currenProgress = 100;
-    const interval = setInterval(() => {
-      currenProgress -= 2;
-      setProgress(currenProgress);
-
-      if (currenProgress <= 0) {
-        clearInterval(interval);
-        navigate("/login");
-      }
-    }, 50);
+  const onSubmit = async (data) => {
+    try {
+      setIsLoading(true);
+      setApiError(null);
+      
+      // Llamada al backend usando Axios
+      const response = await api.post('/users/api/users/', {
+        first_name: data.name, 
+        last_name: "", 
+        email: data.email,
+        password: data.password
+      });
+      
+      // Axios ya transforma la respuesta a JSON automáticamente
+      const result = response.data;
+      
+      // Registro exitoso
+      toast.success("¡Registro completado!", {
+        icon: "🐾",
+      });
+      
+      reset();
+      
+      // Animación de redirección
+      let currenProgress = 100;
+      const interval = setInterval(() => {
+        currenProgress -= 2;
+        setProgress(currenProgress);
+  
+        if (currenProgress <= 0) {
+          clearInterval(interval);
+          navigate("/login");
+        }
+      }, 50);
+      
+    } catch (error) {
+      // Axios proporciona el mensaje de error en error.response.data
+      const errorMessage = error.response?.data?.message || "Ocurrió un error durante el registro";
+      setApiError(errorMessage);
+      toast.error("Error en el registro");
+    } finally {
+      setIsLoading(false);
+    }
   };
 
   return (

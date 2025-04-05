@@ -1,8 +1,20 @@
+{/*
+    Componente: Axios
+    Creado: 01/04/2025
+    Autor: PabloRM
+    
+    Descripción: Conexión con el backend.
+    
+    Historial de modificaciones:
+    - 01/04/2025: Creación inicial de la conexión con el backend.
+    - 05/04/2025: Conexion con el backend nuevo. 
+    - [Fecha]: [Descripción de la modificación]
+*/}
 import axios from 'axios';
 
 // Creamos una instancia de axios con la URL base de la API
 const api = axios.create({
-baseURL: 'https://4400-90-74-219-163.ngrok-free.app',
+baseURL: 'http://13.60.236.64:8000',
 headers: {
     'Content-Type': 'application/json',
     'Accept': 'application/json',

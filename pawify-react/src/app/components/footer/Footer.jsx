@@ -1,3 +1,18 @@
+{/*
+    Componente: Footer
+    Creado: 15/04/2025
+    Autor: PabloRM
+    
+    Descripción: 
+    Componente de pie de página que contiene información de contacto, 
+    enlaces a secciones importantes y formulario de suscripción a newsletter.
+    
+    Historial de modificaciones:
+    - 15/04/2025: Creación inicial del componente
+    - [Fecha]: [Descripción de la modificación]
+    - [Fecha]: [Descripción de la modificación]
+*/}
+
 import React from 'react';
 import { Link } from 'react-router-dom';
 import { FaFacebook, FaInstagram, FaTwitter, FaYoutube } from 'react-icons/fa';
