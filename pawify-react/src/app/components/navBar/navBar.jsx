@@ -15,7 +15,7 @@ const NavBar = () => {
           <input type="text" className="search-bar" placeholder="Search..." />
           <button
             id="search-btn"
-            style={{ backgroundColor: theme.colors.accent }}
+            style={{ backgroundColor: theme.colors.goldenYellow }}
           >
             {searchSvg}
           </button>
@@ -44,7 +44,7 @@ const NavBar = () => {
       <div className="section-three">
         <button
           id="profile-btn"
-          style={{ backgroundColor: theme.colors.accent }}
+          style={{ backgroundColor: theme.colors.goldenYellow }}
         >
           {profileSvg}
         </button>
