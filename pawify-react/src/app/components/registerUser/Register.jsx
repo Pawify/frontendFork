@@ -20,6 +20,8 @@ export default function Register() {
   const [showPassword, setShowPassword] = useState(false);
   const [showConfirmPassword, setShowConfirmPassword] = useState(false);
   const [progress, setProgress] = useState(100);
+  const [apiError, setApiError] = useState(null); 
+  const [isLoading, setIsLoading] = useState(false); 
   const { background, primary, accent, deepRed } = theme.colors;
   const navigate = useNavigate();
 
@@ -63,6 +65,13 @@ export default function Register() {
             ¡Únete a nuestra comunidad!
           </h2>
         </div>
+
+        {/* Mostramos errores de la API si existen */}
+        {apiError && (
+          <div className="mb-4 p-2 bg-red-100 border border-red-400 text-red-700 rounded">
+            {apiError}
+          </div>
+        )}
 
         <form onSubmit={handleSubmit(onSubmit)}>
           <div className="mb-4">
@@ -187,9 +196,20 @@ export default function Register() {
           <button
             type="submit"
             className="w-full text-white py-2 px-4 rounded-md flex items-center justify-center gap-2"
-            style={{ backgroundColor: accent, cursor: "pointer" }}
+            style={{ 
+              backgroundColor: accent, 
+              cursor: isLoading ? "wait" : "pointer",
+              opacity: isLoading ? 0.7 : 1 
+            }}
+            disabled={isLoading}
           >
-            <PawPrint size={20} /> Registrarse
+            {isLoading ? (
+              "Procesando..."
+            ) : (
+              <>
+                <PawPrint size={20} /> Registrarse
+              </>
+            )}
           </button>
         </form>
 
