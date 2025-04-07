@@ -6,10 +6,20 @@ import "./home.css";
 
 export default function Home() {
   //estilos colores
-  const { background, primary, secondary, goldenYellow, softBeige, vibrantBlue } =
-    theme.colors;
+  const {
+    background,
+    primary,
+    secondary,
+    goldenYellow,
+    softBeige,
+    softGrey,
+    vibrantBlue,
+    vibrantBlue2,
+  } = theme.colors;
   return (
     <Layout>
+      {/* HERO CONTENT */}
+
       <div
         className="Home py-5 px-7"
         style={{ backgroundColor: background, textAlign: "left" }}
@@ -36,7 +46,7 @@ export default function Home() {
             <a href="">
               <button
                 className="border-none rounded-[20px] px-5 py-1 mt-4 mb-2 cursor-pointer"
-                style={{ backgroundColor: goldenYellow , fontSize: "12px" }}
+                style={{ backgroundColor: goldenYellow, fontSize: "12px" }}
               >
                 {texts.adoptionTitle}
               </button>
@@ -45,9 +55,11 @@ export default function Home() {
           </div>
           <div className="hero-content-right">
             {" "}
-            <img src="null" alt="" className="img-hero" />
+            <img src="hero-home.png" alt="" className="img-hero" />
           </div>
         </div>
+
+        {/* BANNER SERVICIO GRATUITO */}
 
         <div className="service-banner">
           <div className="service-banner-card ">
@@ -67,7 +79,7 @@ export default function Home() {
           <div className="service-banner-card flex flex-row">
             <div
               className="service-banner-cc whitespace-pre-line border-none rounded-[10px] px-5 py-2 mr-3"
-              style={{ backgroundColor: softBeige }}
+              style={{ backgroundColor: softGrey }}
             >
               <img src="null" alt="" className="img-service" />
               <h3
@@ -98,6 +110,8 @@ export default function Home() {
           </div>
         </div>
 
+        {/* BANNER VISITAS Y ADOPCIONES */}
+
         <div className="numbers-banner">
           <div className="numbers-banner-card px-5 py-2">
             <h2
@@ -117,7 +131,11 @@ export default function Home() {
             </p>
           </div>
           <div className="numbers-banner-card">
-            <img src="null" alt="" className="img-numbers" />
+            <img
+              src="numbers-img.png"
+              alt="Puppy and kitten"
+              className="img-numbers"
+            />
           </div>
           <div
             className="numbers-banner-card px-5 py-2"
@@ -141,7 +159,12 @@ export default function Home() {
           </div>
         </div>
 
-        <div className="adoption-banner" style={{ background: secondary}}>
+        {/* BANNER ADOPCION */}
+
+        <div
+          className="adoption-banner border-none rounded-[10px]"
+          style={{ background: vibrantBlue }}
+        >
           <div className="adoption-banner-content">
             <h2 style={{ color: primary, fontSize: "35px", fontWeight: "700" }}>
               {texts.titleTwo}
@@ -151,7 +174,7 @@ export default function Home() {
             </p>
             <a href="">
               <button
-                className="border-none rounded-[20px] px-5 py-1 mt-4 mb-2 cursor-pointer"
+                className="border-none rounded-[20px] px-5 py-1 mx-2 cursor-pointer"
                 style={{ backgroundColor: goldenYellow, fontSize: "12px" }}
               >
                 {texts.adoptionTitle}
@@ -160,43 +183,45 @@ export default function Home() {
             {/* falta agregar la ruta */}
           </div>
         </div>
-        
+
+        {/* NUESTRO SERVICIO */}
+
         <div className="service-section">
           <div className="service-content">
-            <div className="header-left">
-              <h4 style={{ color: secondary, fontSize: "16px" }}>
+            <div className="header-left w-[50%]">
+              <h4 style={{ color: vibrantBlue, fontSize: "16px" }}>
                 {texts.serviceSection}
               </h4>
-              <h2 style={{ color: primary, fontSize: "35px", fontWeight: "700" }}>
+              <h2
+                style={{ color: primary, fontSize: "35px", fontWeight: "700" }}
+              >
                 {texts.serviceTitle}
               </h2>
             </div>
-            <div className="header-right">
+            <div className="header-right mt-14 w-[50%]">
               {/* <p style={{ color: primary, fontSize: "16px" }}>
                 {texts.serviceSubtitle}
               </p> */}
               <p style={{ color: primary, fontSize: "16px" }}>
                 Somos el nuevo buscador para{" "}
-                <span style={{ fontWeight: 600 }}>mascotas invisibles</span>{" "}
-                en todo el mundo, ayudándolas a encontrar un hogar lo antes posible.
+                <span style={{ fontWeight: 600 }}>mascotas invisibles</span> en
+                todo el mundo, ayudándolas a encontrar un hogar lo antes
+                posible.
               </p>
               <a href="">
-              <button
-                className="border-none rounded-[20px] px-5 py-1 mt-4 mb-2 cursor-pointer"
-                style={{ backgroundColor: goldenYellow, fontSize: "12px" }}
-              >
-                {texts.adoptionTitle}
-              </button>
-            </a>{" "}
+                <button
+                  className="border-none rounded-[20px] px-5 py-1 mt-4 mb-2 cursor-pointer"
+                  style={{ backgroundColor: goldenYellow, fontSize: "12px" }}
+                >
+                  {texts.adoptionTitle}
+                </button>
+              </a>{" "}
             </div>
           </div>
 
-          <div className="service-cards">
+          <div className="service-card-container">
             {/* Card 1 */}
-            <div
-              className="service-banner-cc whitespace-pre-line border-none rounded-[10px] px-5 py-2 mr-3"
-              style={{ backgroundColor: softBeige }}
-            >
+            <div className="service-card whitespace-pre-line border-none rounded-[10px] px-5 py-2 mr-3">
               <img src="null" alt="" className="img-service" />
               <h3
                 className="mb-2"
@@ -208,19 +233,16 @@ export default function Home() {
                 {texts.serviceOneDescription}
               </p>
               <a href="">
-              <button
-                className="border-none rounded-[20px] px-5 py-1 mt-4 mb-2 cursor-pointer"
-                style={{ backgroundColor: goldenYellow, fontSize: "12px" }}
-              >
-                {texts.proximamente}
-              </button>
-            </a>{" "}
+                <button
+                  className="border-none rounded-[20px] px-5 py-1 mt-4 mb-2 cursor-pointer"
+                  style={{ backgroundColor: goldenYellow, fontSize: "12px" }}
+                >
+                  {texts.proximamente}
+                </button>
+              </a>{" "}
             </div>
             {/* Card 2 */}
-            <div
-              className="service-banner-cc whitespace-pre-line border-none rounded-[10px] px-5 py-2 mr-3"
-              style={{ backgroundColor: softBeige }}
-            >
+            <div className="service-card whitespace-pre-line border-none rounded-[10px] px-5 py-2 mr-3">
               <img src="null" alt="" className="img-service" />
               <h3
                 className="mb-2"
@@ -232,19 +254,16 @@ export default function Home() {
                 {texts.serviceTwoDescription}
               </p>
               <a href="">
-              <button
-                className="border-none rounded-[20px] px-5 py-1 mt-4 mb-2 cursor-pointer"
-                style={{ backgroundColor: goldenYellow, fontSize: "12px" }}
-              >
-                {texts.proximamente}
-              </button>
-            </a>{" "}
+                <button
+                  className="border-none rounded-[20px] px-5 py-1 mt-4 mb-2 cursor-pointer"
+                  style={{ backgroundColor: goldenYellow, fontSize: "12px" }}
+                >
+                  {texts.proximamente}
+                </button>
+              </a>{" "}
             </div>
             {/* Card 3 */}
-            <div
-              className="service-banner-cc whitespace-pre-line border-none rounded-[10px] px-5 py-2 mr-3"
-              style={{ backgroundColor: secondary }}
-            >
+            <div className="service-card whitespace-pre-line border-none rounded-[10px] px-5 py-2 mr-3">
               <img src="null" alt="" className="img-service" />
               <h3
                 className="mb-2"
@@ -256,19 +275,16 @@ export default function Home() {
                 {texts.serviceThreeDescription}
               </p>
               <a href="">
-              <button
-                className="border-none rounded-[20px] px-5 py-1 mt-4 mb-2 cursor-pointer"
-                style={{ backgroundColor: goldenYellow, fontSize: "12px" }}
-              >
-                {texts.adoptionTitle}
-              </button>
-            </a>{" "}
+                <button
+                  className="border-none rounded-[20px] px-5 py-1 mt-4 mb-2 cursor-pointer"
+                  style={{ backgroundColor: goldenYellow, fontSize: "12px" }}
+                >
+                  {texts.adoptionTitle}
+                </button>
+              </a>{" "}
             </div>
             {/* Card 4 */}
-            <div
-              className="service-banner-cc whitespace-pre-line border-none rounded-[10px] px-5 py-2 mr-3"
-              style={{ backgroundColor: softBeige }}
-            >
+            <div className="service-card whitespace-pre-line border-none rounded-[10px] px-5 py-2 mr-3">
               <img src="null" alt="" className="img-service" />
               <h3
                 className="mb-2"
@@ -280,19 +296,16 @@ export default function Home() {
                 {texts.serviceFourDescription}
               </p>
               <a href="">
-              <button
-                className="border-none rounded-[20px] px-5 py-1 mt-4 mb-2 cursor-pointer"
-                style={{ backgroundColor: goldenYellow, fontSize: "12px" }}
-              >
-                {texts.proximamente}
-              </button>
-            </a>{" "}
+                <button
+                  className="border-none rounded-[20px] px-5 py-1 mt-4 mb-2 cursor-pointer"
+                  style={{ backgroundColor: goldenYellow, fontSize: "12px" }}
+                >
+                  {texts.proximamente}
+                </button>
+              </a>{" "}
             </div>
             {/* Card 5 */}
-            <div
-              className="service-banner-cc whitespace-pre-line border-none rounded-[10px] px-5 py-2 mr-3"
-              style={{ backgroundColor: softBeige }}
-            >
+            <div className="service-card whitespace-pre-line border-none rounded-[10px] px-5 py-2 mr-3">
               <img src="null" alt="" className="img-service" />
               <h3
                 className="mb-2"
@@ -304,23 +317,20 @@ export default function Home() {
                 {texts.serviceFiveDescription}
               </p>
               <a href="">
-              <button
-                className="border-none rounded-[20px] px-5 py-1 mt-4 mb-2 cursor-pointer"
-                style={{ backgroundColor: goldenYellow, fontSize: "12px" }}
-              >
-                {texts.proximamente}
-              </button>
-            </a>{" "}
+                <button
+                  className="border-none rounded-[20px] px-5 py-1 mt-4 mb-2 cursor-pointer"
+                  style={{ backgroundColor: goldenYellow, fontSize: "12px" }}
+                >
+                  {texts.proximamente}
+                </button>
+              </a>{" "}
             </div>
             {/* Card 6 */}
-            <div
-              className="service-banner-cc whitespace-pre-line border-none rounded-[10px] px-5 py-2 mr-3"
-              style={{ backgroundColor: softBeige }}
-            >
+            <div className="service-card whitespace-pre-line border-none rounded-[10px] px-5 py-2 mr-3">
               <img src="null" alt="" className="img-service" />
               <h3
                 className="mb-2"
-                style={{ color: primary, fontSize: "15px", fontWeight: "600" }}
+                style={{ color: softGrey, fontSize: "15px", fontWeight: "600" }}
               >
                 {texts.serviceSix}
               </h3>
@@ -328,39 +338,65 @@ export default function Home() {
                 {texts.serviceSixDescription}
               </p>
               <a href="">
-              <button
-                className="border-none rounded-[20px] px-5 py-1 mt-4 mb-2 cursor-pointer"
-                style={{ backgroundColor: goldenYellow, fontSize: "12px" }}
-              >
-                {texts.proximamente}
-              </button>
-            </a>{" "}
+                <button
+                  className="border-none rounded-[20px] px-5 py-1 mt-4 mb-2 cursor-pointer"
+                  style={{ backgroundColor: goldenYellow, fontSize: "12px" }}
+                >
+                  {texts.proximamente}
+                </button>
+              </a>{" "}
             </div>
-
           </div>
         </div>
+
+        {/* POR QUE ELEGIR PAWIFY */}
 
         <div className="why-section">
           <div className="why-content">
             <div className="header-left">
-              <h4 style={{ color: secondary, fontSize: "16px" }}>
+              <h4
+                style={{
+                  color: vibrantBlue,
+                  fontSize: "16px",
+                  textAlign: "left",
+                }}
+              >
                 {texts.whySection}
               </h4>
-              <h2 style={{ color: primary, fontSize: "35px", fontWeight: "700" }}>
+              <h2
+                style={{
+                  color: primary,
+                  fontSize: "35px",
+                  fontWeight: "700",
+                  textAlign: "left",
+                }}
+              >
                 {texts.whyTitle}
               </h2>
-              <p className="pt-5 mb-5" style={{ color: primary, fontSize: "16px" }}>
+              <p
+                className="pt-5 mb-5"
+                style={{ color: primary, fontSize: "16px", textAlign: "left" }}
+              >
                 {texts.whySubtitle}
               </p>
-              <div className="why-cards pt-5">
+              <div className="why-cards flex flex-row flex-wrap pt-5">
                 {/* Card 1 */}
                 <div
-                  className="why-cards-cc whitespace-pre-line border-none rounded-[10px] px-5 py-2 mr-3"
+                  className="why-cards-cc whitespace-pre-line border-none rounded-[10px] px-5 py-2 mr-3 mb-3"
+                  style={{
+                    width: "200px",
+                    height: "auto",
+                    border: "1px solid red",
+                  }}
                 >
                   <img src="null" alt="" className="img-service" />
                   <h3
-                    className="mb-2"
-                    style={{ color: primary, fontSize: "15px", fontWeight: "600" }}
+                    className="my-1"
+                    style={{
+                      color: primary,
+                      fontSize: "15px",
+                      fontWeight: "600",
+                    }}
                   >
                     {texts.reasonOne}
                   </h3>
@@ -370,12 +406,21 @@ export default function Home() {
                 </div>
                 {/* Card 2 */}
                 <div
-                  className="why-cards-cc whitespace-pre-line border-none rounded-[10px] px-5 py-2 mr-3"
+                  className="why-cards-cc whitespace-pre-line border-none rounded-[10px] px-5 py-2 mr-3 mb-3"
+                  style={{
+                    width: "200px",
+                    height: "auto",
+                    border: "1px solid red",
+                  }}
                 >
                   <img src="null" alt="" className="img-service" />
                   <h3
-                    className="mb-2"
-                    style={{ color: primary, fontSize: "15px", fontWeight: "600" }}
+                    className="my-1"
+                    style={{
+                      color: primary,
+                      fontSize: "15px",
+                      fontWeight: "600",
+                    }}
                   >
                     {texts.reasonTwo}
                   </h3>
@@ -385,12 +430,21 @@ export default function Home() {
                 </div>
                 {/* Card 3 */}
                 <div
-                  className="why-cards-cc whitespace-pre-line border-none rounded-[10px] px-5 py-2 mr-3"
+                  className="why-cards-cc whitespace-pre-line border-none rounded-[10px] px-5 py-2 mr-3 mb-3"
+                  style={{
+                    width: "200px",
+                    height: "auto",
+                    border: "1px solid red",
+                  }}
                 >
                   <img src="null" alt="" className="img-service" />
                   <h3
-                    className="mb-2"
-                    style={{ color: primary, fontSize: "15px", fontWeight: "600" }}
+                    className="my-1"
+                    style={{
+                      color: primary,
+                      fontSize: "15px",
+                      fontWeight: "600",
+                    }}
                   >
                     {texts.reasonThree}
                   </h3>
@@ -400,56 +454,86 @@ export default function Home() {
                 </div>
                 {/* Card 4 */}
                 <div
-                  className="why-cards-cc whitespace-pre-line border-none rounded-[10px] px-5 py-2 mr-3"
+                  className="why-cards-cc whitespace-pre-line border-none rounded-[10px] px-5 py-2 mr-3 mb-3"
+                  style={{
+                    width: "200px",
+                    height: "auto",
+                    border: "1px solid red",
+                  }}
                 >
                   <img src="null" alt="" className="img-service" />
                   <h3
-                    className="mb-2"
-                    style={{ color: primary, fontSize: "15px", fontWeight: "600" }}
+                    className="my-1"
+                    style={{
+                      color: primary,
+                      fontSize: "15px",
+                      fontWeight: "600",
+                    }}
                   >
                     {texts.reasonFour}
                   </h3>
                   <p style={{ color: primary, fontSize: "11px" }}>
                     {texts.reasonFourDescription}
-                    <a href="">
-                      {texts.reasonFourDescriptionLink}
-                    </a>{" "}
+                    <a href="">{texts.reasonFourDescriptionLink}</a>{" "}
                   </p>
                 </div>
               </div>
             </div>
+            <div className="img-why-container">
+              <img
+                src="why-us-img.png"
+                alt="Cat with a ball of yarn"
+                className="img-why"
+              />
+            </div>
           </div>
         </div>
+
+        {/* DESCUBRE MÁS*/}
 
         <div className="more-section">
           <div className="more-content">
             <div className="header-left">
-              <h4 style={{ color: secondary, fontSize: "16px" }}>
+              <h4 style={{ color: vibrantBlue, fontSize: "16px" }}>
                 {texts.moreSection}
               </h4>
-              <h2 style={{ color: primary, fontSize: "35px", fontWeight: "700" }}>
+              <h2
+                style={{ color: primary, fontSize: "35px", fontWeight: "700" }}
+              >
                 {texts.moreTitle}
               </h2>
               {/* <p className="pt-5" style={{ color: primary, fontSize: "16px" }}>
                 {texts.moreSubtitle}
               </p> */}
-              <p className="mt-5 mb-5" style={{ color: primary, fontSize: "16px" }}>
+              <p
+                className="mt-5 mb-1"
+                style={{ color: primary, fontSize: "16px" }}
+              >
                 Descubre una amplia gama de{" "}
                 <span style={{ fontWeight: 600 }}>servicios y productos</span>{" "}
                 diseñados para cubrir todas las necesidades de tu mascota.
               </p>
-              <div className="more-cards pt-5">
+              <div className="more-cards flex flex-col flex-wrap items-center pt-5">
                 {/* Card 1 */}
                 <div
-                  className="more-cards-cc whitespace-pre-line border-none rounded-[10px] px-5 py-2 mr-3"
+                  className="more-cards-cc flex flex-row items-center whitespace-pre-line border-none rounded-[10px] px-5 py-2 mr-3 mb-3"
+                  style={{
+                    width: "350px",
+                    height: "auto",
+                    border: "1px solid red",
+                  }}
                 >
-                  <div>
+                  <div className="img-more-container">
                     <img src="null" alt="" className="img-service" />
                   </div>
                   <div>
                     <h3
-                      className="mb-2"
-                      style={{ color: primary, fontSize: "15px", fontWeight: "600" }}
+                      className="mb-1"
+                      style={{
+                        color: primary,
+                        fontSize: "15px",
+                        fontWeight: "600",
+                      }}
                     >
                       {texts.moreInfoOne}
                     </h3>
@@ -460,15 +544,24 @@ export default function Home() {
                 </div>
                 {/* Card 2 */}
                 <div
-                  className="more-cards-cc whitespace-pre-line border-none rounded-[10px] px-5 py-2 mr-3"
+                  className="more-cards-cc flex flex-row items-center whitespace-pre-line border-none rounded-[10px] px-5 py-2 mr-3 mb-3"
+                  style={{
+                    width: "350px",
+                    height: "auto",
+                    border: "1px solid red",
+                  }}
                 >
-                  <div>
+                  <div className="img-more-container">
                     <img src="null" alt="" className="img-service" />
                   </div>
                   <div>
                     <h3
-                      className="mb-2"
-                      style={{ color: primary, fontSize: "15px", fontWeight: "600" }}
+                      className="mb-1"
+                      style={{
+                        color: primary,
+                        fontSize: "15px",
+                        fontWeight: "600",
+                      }}
                     >
                       {texts.moreInfoTwo}
                     </h3>
@@ -479,46 +572,40 @@ export default function Home() {
                 </div>
               </div>
             </div>
+
             <div className="header-right">
-              <div className="contact-info" style={{ background: secondary}}>
-                <img src="null" alt="" className="img-service" />
-                <p className="pt-5" style={{ fontSize: "16px" }}>
+              <div
+                className="contact-info border-none rounded-[10px] p-5 w-[275px]"
+                style={{ background: vibrantBlue2, color: background }}
+              >
+                <img src="null" alt="" className="img-more" />
+                <p className="pt-1" style={{ fontSize: "16px" }}>
                   {texts.moreContactTitle}
                 </p>
-                <p style={{ fontSize: "11px" }}>
-                  {texts.moreContactInfo}
-                </p>
-                <hr className="m-5"></hr>
-                <p style={{ fontSize: "16px" }}>
-                  {texts.moreAdoptionTitle}
-                </p>
-                <p style={{ fontSize: "11px" }}>
-                  {texts.moreAdoptionInfo}
-                </p>
-                <p className="pt-5" style={{ fontSize: "16px" }}>
+                <p style={{ fontSize: "11px" }}>{texts.moreContactInfo}</p>
+                <hr className="m-3"></hr>
+                <p style={{ fontSize: "16px" }}>{texts.moreAdoptionTitle}</p>
+                <p style={{ fontSize: "11px" }}>{texts.moreAdoptionInfo}</p>
+                <p className="pt-2" style={{ fontSize: "16px" }}>
                   {texts.moreCareTitle}
                 </p>
-                <p style={{ fontSize: "11px" }}>
-                  {texts.moreCareInfo}
-                </p>
-                <p className="pt-5" style={{ fontSize: "16px" }}>
+                <p style={{ fontSize: "11px" }}>{texts.moreCareInfo}</p>
+                <p className="pt-2" style={{ fontSize: "16px" }}>
                   {texts.moreShopTitle}
                 </p>
-                <p style={{ fontSize: "11px" }}>
-                  {texts.moreShopInfo}
-                </p>
-                <hr className="m-5"></hr>
-                <p style={{ fontSize: "11px" }}>
-                  {texts.moreExtraInfo}
-                </p>
+                <p style={{ fontSize: "11px" }}>{texts.moreShopInfo}</p>
+                <hr className="m-3"></hr>
+                <p style={{ fontSize: "11px" }}>{texts.moreExtraInfo}</p>
               </div>
             </div>
           </div>
         </div>
 
+        {/* TESTIMONIAL */}
+
         <div className="testimonial-section">
-          <div className="testimonial-content">
-            <h4 style={{ color: secondary, fontSize: "16px" }}>
+          <div className="testimonial-content text-center">
+            <h4 style={{ color: vibrantBlue, fontSize: "16px" }}>
               {texts.testimonialSection}
             </h4>
             <h2 style={{ color: primary, fontSize: "35px", fontWeight: "700" }}>
