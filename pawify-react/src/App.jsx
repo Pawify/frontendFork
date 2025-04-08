@@ -8,7 +8,7 @@ import NavBar from "./app/components/navBar/navBar";
 import Footer from "./app/components/footer/Footer"; 
 import Adoptions from "./app/components/pages/Adoption/Adoptions";
 import Animal from "./app/components/pages/Adoption/Animal";
-import "./App.css"; // Make sure to create this file for the styles
+import "./App.css"; 
 
 function App() {
   return (

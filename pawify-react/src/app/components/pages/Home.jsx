@@ -1,5 +1,4 @@
 import React from "react";
-import Layout from "../layout/Layout";
 import theme from "@/constants/themes";
 import { texts } from "../../../constants/texts";
 import "./home.css";
@@ -17,7 +16,7 @@ export default function Home() {
     vibrantBlue2,
   } = theme.colors;
   return (
-    <Layout>
+    <div>
       {/* HERO CONTENT */}
 
       <div
@@ -614,6 +613,6 @@ export default function Home() {
           </div>
         </div>
       </div>
-    </Layout>
+    </div>
   );
 }
