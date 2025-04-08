@@ -154,6 +154,7 @@
   flex-direction: column;
   justify-content: center;
   align-items: center;
+  box-shadow: 10px 10px 20px #e3e3e3, -10px -10px 20px #ffffff;
 }
 .header-left {
   display: flex;
@@ -203,16 +204,19 @@
   width: 50%;
   height: auto;
 }
+.more-cards-cc {
+  box-shadow: 10px 10px 20px #e3e3e3, -10px -10px 20px #ffffff;
+}
 .img-more-container {
   display: flex;
   justify-content: flex-end;
   align-items: right;
-  width: 100%;
+  width: 30%;
   height: 100%;
 }
 .img-more {
-  width: 20%;
-  height: 50%;
+  width: 75%;
+  height: 90%;
 }
 .img-more-contact {
   width: 40%;

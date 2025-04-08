@@ -415,6 +415,7 @@ export default function Home() {
                   style={{
                     width: "200px",
                     height: "auto",
+                    backgroundColor: background,
                   }}
                 >
                   <img
@@ -442,6 +443,7 @@ export default function Home() {
                   style={{
                     width: "200px",
                     height: "auto",
+                    backgroundColor: background,
                   }}
                 >
                   <img
@@ -469,6 +471,7 @@ export default function Home() {
                   style={{
                     width: "200px",
                     height: "auto",
+                    backgroundColor: background,
                   }}
                 >
                   <img
@@ -496,6 +499,7 @@ export default function Home() {
                   style={{
                     width: "200px",
                     height: "auto",
+                    backgroundColor: background,
                   }}
                 >
                   <img
@@ -569,11 +573,12 @@ export default function Home() {
               <div className="more-cards flex flex-col flex-wrap items-center pt-2">
                 {/* Card 1 */}
                 <div
-                  className="more-cards-cc flex flex-row items-center whitespace-pre-line border-none rounded-[10px] px-5 py-2 mr-3 mb-1"
+                  className="more-cards-cc flex flex-row items-center whitespace-pre-line border-none rounded-[10px] px-5 py-2 mr-3 mb-2"
                   style={{
                     width: "100%",
                     height: "auto",
                     gap: "15px",
+                    backgroundColor: background,
                   }}
                 >
                   <div className="img-more-container">
@@ -606,6 +611,7 @@ export default function Home() {
                     width: "100%",
                     height: "auto",
                     gap: "15px",
+                    backgroundColor: background,
                   }}
                 >
                   <div className="img-more-container">
