@@ -1,0 +1,114 @@
+
+/* Contenedor principal */
+.adoptions-container {
+max-width: 1200px;
+margin: auto; 
+width: 100%;
+}
+
+/* Sección de imagen hero */
+.hero-image {
+max-width: 100%;
+height: auto;
+}
+
+/* Estilos generales de secciones */
+section {
+padding: 20px;
+}
+
+/* Sección de búsqueda */
+.search-container {
+display: flex;
+padding: 20px;
+}
+
+.search-filters {
+display: flex;
+gap: 10px;
+justify-content: center;
+align-items: center;
+max-width: 800px;
+width: 100%;
+}
+
+.filter-group {
+position: relative;
+flex: 1;
+}
+
+/* Estilos de los inputs de filtro */
+.filter-input {
+width: 100%;
+padding: 12px 35px 12px 15px;
+border: 1px solid #ddd;
+border-radius: 8px;
+font-size: 14px;
+background-color: white;
+}
+
+/* Estilos para el placeholder del select */
+select option:first-child {
+color: #757575;
+}
+
+select:invalid {
+color: #757575;
+}
+
+/* Botón de búsqueda */
+.search-button {
+background-color: #FCD039;
+color: #ffffff;
+border: none;
+border-radius: 30px;
+padding: 9px 40px;
+font-size: 20px;
+font-weight: 600;
+cursor: pointer;
+transition: background-color 0.3s;
+white-space: nowrap;
+}
+
+.search-button:hover {
+background-color: #f3c520;
+}
+
+/* Ajustes responsivos */
+@media (max-width: 768px) {
+.adoptions-container {
+margin-top: 70px;
+padding: 0 15px;
+}
+
+section {
+padding: 15px;
+margin-bottom: 30px;
+}
+
+.search-filters {
+flex-direction: column;
+width: 90%;
+}
+
+.filter-group {
+width: 100%;
+}
+
+.search-button {
+width: 100%;
+margin-top: 10px;
+}
+}
+
+@media (max-width: 480px) {
+.adoptions-container {
+margin-top: 60px;
+padding: 0 10px;
+}
+
+section {
+padding: 10px;
+margin-bottom: 20px;
+}
+}
