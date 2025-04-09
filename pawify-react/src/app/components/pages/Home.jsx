@@ -75,7 +75,7 @@ export default function Home() {
           <div className="service-banner-card ">
             <h3
               className="whitespace-pre-line ml-1"
-              style={{ color: primary, fontSize: "35px", fontWeight: "700" }}
+              style={{ color: primary, fontWeight: "700" }}
             >
               {texts.freeServiceTitle}.
             </h3>
@@ -94,7 +94,7 @@ export default function Home() {
               <img
                 src="new_imgs_hero/pet-food.png"
                 alt="Pet food"
-                className="img-service"
+                className="img-our-service"
               />
               <h3
                 className="mb-2"
@@ -113,7 +113,7 @@ export default function Home() {
               <img
                 src="new_imgs_hero/dog-training.png"
                 alt="Dog"
-                className="img-service"
+                className="img-our-service"
               />
               <h3
                 className="mb-2"
@@ -197,7 +197,7 @@ export default function Home() {
           style={{ background: vibrantBlue }}
         >
           <div className="adoption-banner-content p-1">
-            <h2 style={{ color: primary, fontSize: "35px", fontWeight: "700" }}>
+            <h2 style={{ color: primary, fontWeight: "700" }}>
               {texts.titleTwo}
             </h2>
             <p style={{ color: primary, fontSize: "16px" }}>
@@ -254,7 +254,7 @@ export default function Home() {
               >
                 {texts.serviceOne}
               </h3>
-              <p style={{ color: primary, fontSize: "11px" }}>
+              <p style={{ color: primary}}>
                 {texts.serviceOneDescription}
               </p>
               <a href="">
@@ -274,7 +274,7 @@ export default function Home() {
               >
                 {texts.serviceTwo}
               </h3>
-              <p style={{ color: primary, fontSize: "11px" }}>
+              <p style={{ color: primary }}>
                 {texts.serviceTwoDescription}
               </p>
               <a href="">
@@ -294,7 +294,7 @@ export default function Home() {
               >
                 {texts.serviceThree}
               </h3>
-              <p style={{ color: primary, fontSize: "11px" }}>
+              <p style={{ color: primary }}>
                 {texts.serviceThreeDescription}
               </p>
               <a href="">
@@ -314,7 +314,7 @@ export default function Home() {
               >
                 {texts.serviceFour}
               </h3>
-              <p style={{ color: primary, fontSize: "11px" }}>
+              <p style={{ color: primary }}>
                 {texts.serviceFourDescription}
               </p>
               <a href="">
@@ -334,7 +334,7 @@ export default function Home() {
               >
                 {texts.serviceFive}
               </h3>
-              <p style={{ color: primary, fontSize: "11px" }}>
+              <p style={{ color: primary }}>
                 {texts.serviceFiveDescription}
               </p>
               <a href="">
@@ -354,7 +354,7 @@ export default function Home() {
               >
                 {texts.serviceSix}
               </h3>
-              <p style={{ color: primary, fontSize: "11px" }}>
+              <p style={{ color: primary }}>
                 {texts.serviceSixDescription}
               </p>
               <a href="">
@@ -551,7 +551,7 @@ export default function Home() {
           }}
         >
           <div className="more-content px-5 ">
-            <div className="header-left" >
+            <div className="header-left">
               <h4 style={{ color: vibrantBlue, fontSize: "16px" }}>
                 {texts.moreSection}
               </h4>
@@ -563,9 +563,7 @@ export default function Home() {
               {/* <p className="pt-5" style={{ color: primary, fontSize: "16px" }}>
                 {texts.moreSubtitle}
               </p> */}
-              <p
-                style={{ color: primary, fontSize: "16px" }}
-              >
+              <p style={{ color: primary, fontSize: "16px" }}>
                 Descubre una amplia gama de{" "}
                 <span style={{ fontWeight: 600 }}>servicios y productos</span>{" "}
                 diseñados para cubrir todas las necesidades de tu mascota.

@@ -44,6 +44,9 @@
   width: 100%;
   height: 250px;
 }
+.service-banner-card h3 {
+  font-size: 35px;
+}
 .service-banner-cc {
   width: 100%;
   height: auto;
@@ -57,7 +60,7 @@
   transform: scale(1.05);
   transition: transform 0.3s ease;
 }
-.img-service {
+.img-our-service {
   width: 30%;
   height: 30%;
   padding: 10px;
@@ -104,7 +107,9 @@
   height: auto;
   margin-left: auto;
 }
-
+.adoption-banner-content h2 {
+  font-size: 35px;
+}
 .service-section {
   display: flex;
   flex-direction: column;
@@ -131,6 +136,11 @@
   width: 100%;
   height: auto;
 }
+.img-service {
+  width: 30%;
+  height: 30%;
+  padding: 10px;
+}
 .service-card {
   display: flex;
   flex-direction: column;
@@ -140,6 +150,9 @@
   width: 300px;
   height: 270px;
   background-color: #f2f6f9; /*arreglé el fondo en css porque sino no funciona el hover*/
+}
+.service-card p {
+  font-size: 11px;
 }
 .service-card:hover {
   background-color: #79c5e6;
@@ -241,4 +254,79 @@
 .img-more-contact {
   width: 40%;
   height: 20%;
+}
+
+/*Medias queries*/
+
+/* Tablets */
+@media (max-width: 1024px) {
+  .Home {
+    margin: 10px auto;
+  }
+  .img-hero {
+    width: 90%;
+    height: 80%;
+  }
+  .service-banner {
+    flex-wrap: wrap;
+  }
+  .service-banner-card {
+    width: 100%;
+    height: 200px;
+  }
+  .service-banner-card h3,
+  .service-banner-card p {
+    font-size: 25px;
+    text-align: center;
+  }
+  .img-our-service {
+    width: 20%;
+  }
+  .adoption-banner-content h2 {
+    font-size: 26px;
+  }
+  .service-card p {
+    font-size: 13px;
+  }
+  .why-section {
+    position: relative;
+  }
+  .why-content {
+    justify-content: center;
+    align-items: center;
+    position: relative;
+  }
+  .why-cards-cc {
+    justify-content: center;
+    align-items: center;
+    position: relative;
+  }
+  .header-left {
+    width: 100%;
+  }
+  .img-why-container {
+    width: 50%;
+    position: absolute;
+    left: 355px;
+    bottom: 90px;
+  }
+  .img-why {
+    width: 80%;
+    height: 40%;
+    margin: 5px;
+  }
+
+  .img-more-container {
+    width: 50%;
+    height: 50%;
+  }
+  .img-more {
+    width: 85%;
+    height: 100%;
+  }
+}
+
+/* Móviles */
+@media (max-width: 767px) {
+  /* Ajustes para celulares */
 }
