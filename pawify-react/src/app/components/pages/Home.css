@@ -126,6 +126,16 @@
   gap: 10px;
   width: 100%;
 }
+.header-left h2 {
+  font-size: 35px;
+}
+.header-right {
+  margin-top: 50px;
+}
+.header-left,
+.header-right {
+  width: 50%;
+}
 .service-card-container {
   display: flex;
   flex-direction: row;
@@ -149,6 +159,8 @@
   flex-wrap: wrap;
   width: 300px;
   height: 270px;
+  padding: 10px 30px;
+  margin-right: 3rem;
   background-color: #f2f6f9; /*arreglé el fondo en css porque sino no funciona el hover*/
 }
 .service-card p {
@@ -256,9 +268,9 @@
   height: 20%;
 }
 
-/*Medias queries*/
+/*----------------Medias queries--------------*/
 
-/* Tablets */
+/* -------------------Tablets---------------- */
 @media (max-width: 1024px) {
   .Home {
     margin: 10px auto;
@@ -301,7 +313,7 @@
     align-items: center;
     position: relative;
   }
-  .header-left {
+  .why-content .header-left {
     width: 100%;
   }
   .img-why-container {
@@ -326,7 +338,135 @@
   }
 }
 
-/* Móviles */
+/* -------------------Móviles------------------- */
 @media (max-width: 767px) {
-  /* Ajustes para celulares */
+  .Home {
+    margin: 10px auto;
+  }
+  .hero-content {
+    flex-direction: column;
+    gap: 5px;
+  }
+  .service-banner {
+    flex-wrap: wrap;
+    height: auto;
+  }
+  .service-banner-card {
+    flex-wrap: wrap;
+    width: 100%;
+    height: auto;
+  }
+  .service-banner-card h3,
+  .service-banner-card p {
+    font-size: 20px;
+    text-align: center;
+  }
+  .img-our-service {
+    width: 25%;
+    height: 30%;
+    padding: 10px;
+  }
+  .numbers-banner {
+    flex-direction: row;
+    flex-wrap: wrap;
+    text-align: left;
+    gap: 0px;
+  }
+  .numbers-banner-card {
+    width: 100%;
+    height: auto;
+  }
+  .img-numbers {
+    display: none;
+  }
+  .adoption-banner {
+    justify-content: center;
+    align-items: center;
+    text-align: left;
+    gap: 0px;
+    height: auto;
+  }
+  .adoption-banner-content {
+    gap: 0px;
+    width: 100%;
+    height: auto;
+    margin-left: 20px;
+  }
+  .adoption-banner-content h2 {
+    font-size: 15px;
+  }
+  .service-content {
+    flex-direction: column;
+    align-items: center;
+    gap: 0px;
+    width: 100%;
+  }
+  .service-card{
+    padding: 1px 10px;
+    margin-right: 1rem;
+  }
+  .header-left h2 {
+    font-size: 20px;
+  }
+  .header-right {
+    margin-top: 5px;
+  }
+  .header-left,
+  .header-right {
+    width: 100%;
+    height: auto;
+  }
+  .why-section {
+    position: relative;
+  }
+  .why-content {
+    justify-content: center;
+    align-items: center;
+    position: relative;
+  }
+  .why-cards-cc {
+    justify-content: center;
+    align-items: center;
+    position: relative;
+  }
+  .why-content .header-left {
+    width: 100%;
+  }
+  .img-why-container {
+    display: none;
+  }
+  .img-why {
+    display: none;
+  }
+  .img-service {
+    width: 35%;
+    height: 35%;
+    padding: 10px;
+  }
+  .more-section {
+ flex-direction: column;
+  }
+  .more-content {
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    gap: 1px;
+  }
+  .more-content .header-left {
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    width: 100%;
+  }
+  .more-content .header-right {
+    width: 100%;
+  }
+  .img-more-container {
+    width: 100%;
+  }
+  .img-more {
+    width: 100%;
+  }
+
+  
 }

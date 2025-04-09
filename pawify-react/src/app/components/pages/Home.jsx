@@ -214,17 +214,15 @@ export default function Home() {
 
         <div className="service-section">
           <div className="service-content">
-            <div className="header-left w-[50%]">
+            <div className="header-left">
               <h4 style={{ color: vibrantBlue, fontSize: "16px" }}>
                 {texts.serviceSection}
               </h4>
-              <h2
-                style={{ color: primary, fontSize: "35px", fontWeight: "700" }}
-              >
+              <h2 style={{ color: primary, fontWeight: "700" }}>
                 {texts.serviceTitle}
               </h2>
             </div>
-            <div className="header-right mt-14 w-[50%]">
+            <div className="header-right">
               {/* <p style={{ color: primary, fontSize: "16px" }}>
                 {texts.serviceSubtitle}
               </p> */}
@@ -242,7 +240,7 @@ export default function Home() {
 
           <div className="service-card-container">
             {/* Card 1 */}
-            <div className="service-card whitespace-pre-line border-none rounded-[10px] px-5 py-2 mr-3">
+            <div className="service-card whitespace-pre-line border-none rounded-[10px]">
               <img
                 src="new_imgs_hero/dog-wash.png"
                 alt="Dog having a bath"
@@ -254,15 +252,13 @@ export default function Home() {
               >
                 {texts.serviceOne}
               </h3>
-              <p style={{ color: primary}}>
-                {texts.serviceOneDescription}
-              </p>
+              <p style={{ color: primary }}>{texts.serviceOneDescription}</p>
               <a href="">
                 <Button> {texts.proximamente} </Button>
               </a>{" "}
             </div>
             {/* Card 2 */}
-            <div className="service-card whitespace-pre-line border-none rounded-[10px] px-5 py-2 mr-3">
+            <div className="service-card whitespace-pre-line border-none rounded-[10px]">
               <img
                 src="new_imgs_hero/dog-training.png"
                 alt="Dog"
@@ -274,15 +270,13 @@ export default function Home() {
               >
                 {texts.serviceTwo}
               </h3>
-              <p style={{ color: primary }}>
-                {texts.serviceTwoDescription}
-              </p>
+              <p style={{ color: primary }}>{texts.serviceTwoDescription}</p>
               <a href="">
                 <Button> {texts.proximamente} </Button>
               </a>{" "}
             </div>
             {/* Card 3 */}
-            <div className="service-card whitespace-pre-line border-none rounded-[10px] px-5 py-2 mr-3">
+            <div className="service-card whitespace-pre-line border-none rounded-[10px]">
               <img
                 src="new_imgs_hero/dog-adopt.png"
                 alt="A cat and a dog in a box"
@@ -294,15 +288,13 @@ export default function Home() {
               >
                 {texts.serviceThree}
               </h3>
-              <p style={{ color: primary }}>
-                {texts.serviceThreeDescription}
-              </p>
+              <p style={{ color: primary }}>{texts.serviceThreeDescription}</p>
               <a href="">
                 <Button> {texts.adoptionTitle} </Button>
               </a>{" "}
             </div>
             {/* Card 4 */}
-            <div className="service-card whitespace-pre-line border-none rounded-[10px] px-5 py-2 mr-3">
+            <div className="service-card whitespace-pre-line border-none rounded-[10px]">
               <img
                 src="new_imgs_hero/adoption.png"
                 alt="A heart in a hand"
@@ -314,15 +306,13 @@ export default function Home() {
               >
                 {texts.serviceFour}
               </h3>
-              <p style={{ color: primary }}>
-                {texts.serviceFourDescription}
-              </p>
+              <p style={{ color: primary }}>{texts.serviceFourDescription}</p>
               <a href="">
                 <Button> {texts.proximamente} </Button>
               </a>{" "}
             </div>
             {/* Card 5 */}
-            <div className="service-card whitespace-pre-line border-none rounded-[10px] px-5 py-2 mr-3">
+            <div className="service-card whitespace-pre-line border-none rounded-[10px]">
               <img
                 src="new_imgs_hero/fan.png"
                 alt="A dog getting its fur dried"
@@ -334,15 +324,13 @@ export default function Home() {
               >
                 {texts.serviceFive}
               </h3>
-              <p style={{ color: primary }}>
-                {texts.serviceFiveDescription}
-              </p>
+              <p style={{ color: primary }}>{texts.serviceFiveDescription}</p>
               <a href="">
                 <Button> {texts.proximamente} </Button>
               </a>{" "}
             </div>
             {/* Card 6 */}
-            <div className="service-card whitespace-pre-line border-none rounded-[10px] px-5 py-2 mr-3">
+            <div className="service-card whitespace-pre-line border-none rounded-[10px]">
               <img
                 src="new_imgs_hero/pet-food.png"
                 alt="Pet food"
@@ -354,9 +342,7 @@ export default function Home() {
               >
                 {texts.serviceSix}
               </h3>
-              <p style={{ color: primary }}>
-                {texts.serviceSixDescription}
-              </p>
+              <p style={{ color: primary }}>{texts.serviceSixDescription}</p>
               <a href="">
                 <Button> {texts.proximamente} </Button>
               </a>{" "}
