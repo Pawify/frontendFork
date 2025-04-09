@@ -1,9 +1,10 @@
 import React, { useState, useEffect } from "react";
 import { useParams, useLocation, useNavigate } from "react-router-dom";
-import { FaHeart, FaRegHeart, FaFacebookF, FaTwitter, FaInstagram, FaWhatsapp } from "react-icons/fa";
+import { FaHeart, FaRegHeart, FaFacebookF, FaTwitter, FaInstagram, FaWhatsapp, FaEye, FaFlag } from "react-icons/fa";
 import "./Animal.css";
 
 const Animal = () => {
+// Estados para gestionar la información y comportamiento del componente
 const { id } = useParams();
 const location = useLocation();
 const navigate = useNavigate();
@@ -11,12 +12,19 @@ const [animal, setAnimal] = useState(location.state?.animal || null);
 const [isFavorite, setIsFavorite] = useState(false);
 const [isLoading, setIsLoading] = useState(!animal);
 const [mainImage, setMainImage] = useState(null);
+const [visitCount, setVisitCount] = useState(0);
+const [showReportModal, setShowReportModal] = useState(false);
+const [reportForm, setReportForm] = useState({
+reason: "",
+message: ""
+});
 
+// Efecto para cargar datos del animal desde API o establecer imagen principal
 useEffect(() => {
-// If animal data wasn't passed through location state, fetch it
+// Si no hay datos del animal pero sí un ID, cargamos desde API
 if (!animal && id) {
     setIsLoading(true);
-    // Replace with your actual API call
+    // Simulación de llamada API - reemplazar en producción
     fetch(`/api/animals/${id}`)
     .then(response => response.json())
     .then(data => {
@@ -24,36 +32,56 @@ if (!animal && id) {
         setIsLoading(false);
     })
     .catch(error => {
-        console.error("Error fetching animal details:", error);
+        console.error("Error al cargar detalles del animal:", error);
         setIsLoading(false);
     });
 }
 
-// Set the main image when animal data is available
+// Establecer imagen principal si hay datos del animal
 if (animal) {
     setMainImage(animal.imageUrl || "/placeholder-animal.jpg");
 }
 }, [animal, id]);
 
-const toggleFavorite = () => {
-setIsFavorite(!isFavorite);
-// Add logic to save to favorites in backend or localStorage
-};
-
-const handleShare = (platform) => {
-// Implement sharing functionality for different platforms
-console.log(`Sharing to ${platform}`);
-};
-
-// Function to handle thumbnail click
-const handleThumbnailClick = (imageUrl) => {
-// Swap the main image with the clicked thumbnail
-setMainImage(imageUrl);
-};
-
-if (isLoading) {
-return <div className="loading-container">Cargando...</div>;
+// Efecto para simular contador de visitas
+useEffect(() => {
+if (animal && id) {
+    // Simulación - reemplazar en producción con llamada real
+    setVisitCount(Math.floor(Math.random() * 100) + 1);
 }
+}, [animal, id]);
+
+// Funciones de interacción con el usuario
+const toggleFavorite = () => setIsFavorite(!isFavorite);
+
+const handleShare = (platform) => console.log(`Compartiendo en ${platform}`);
+
+const handleThumbnailClick = (imageUrl) => setMainImage(imageUrl);
+
+const handleReport = () => setShowReportModal(true);
+
+const handleReportFormChange = (e) => {
+const { name, value } = e.target;
+setReportForm(prev => ({
+    ...prev,
+    [name]: value
+}));
+};
+
+const submitReport = (e) => {
+e.preventDefault();
+console.log(`Reportando animal ${id}:`, reportForm);
+// Aquí iría la lógica para enviar el reporte a la API
+setShowReportModal(false);
+// Resetear el formulario
+setReportForm({
+    reason: "",
+    message: ""
+});
+};
+
+// Renderizado condicional para estados de carga y error
+if (isLoading) return <div className="loading-container">Cargando...</div>;
 
 if (!animal) {
 return (
@@ -64,149 +92,244 @@ return (
 );
 }
 
+// Renderizado principal del componente
 return (
 <div className="animal-detail-container">
+    {/* Sección de imágenes y galería */}
     <div className="animal-detail-content">
-        {/* Images section with heart button aligned */}
-        <div className="animal-images-section">
-            <div className="images-header">
-                <button 
-                    className="favorite-button-detail"
-                    onClick={toggleFavorite}
-                    aria-label={isFavorite ? "Remove from favorites" : "Add to favorites"}
-                >
-                    {isFavorite ? <FaHeart className="heart-icon filled" /> : <FaRegHeart className="heart-icon" />}
-                </button>
+    <div className="animal-images-section">
+        <div className="favorite-button-container">
+        <button 
+            className="favorite-button-detail"
+            onClick={toggleFavorite}
+            aria-label={isFavorite ? "Quitar de favoritos" : "Añadir a favoritos"}
+        >
+            {isFavorite ? <FaHeart className="heart-icon filled" /> : <FaRegHeart className="heart-icon" />}
+        </button>
+        </div>
+        
+        <div className="images-container">
+        <div className="image-gallery-container">
+            {/* Imagen principal */}
+            <div className="main-image-container">
+            <img 
+                src={mainImage || animal.imageUrl || "/placeholder-animal.jpg"} 
+                alt={animal.name || "Animal sin nombre"} 
+                className="main-image" 
+            />
             </div>
             
-            <div className="images-container">
-                <div className="image-gallery-container">
-                    <div className="main-image-container">
-                        <img 
-                            src={mainImage || animal.imageUrl || "/placeholder-animal.jpg"} 
-                            alt={animal.name || "Animal sin nombre"} 
-                            className="main-image" 
-                        />
-                    </div>
-                    <div className="thumbnail-gallery">
-                        <div 
-                            className="thumbnail-container"
-                            onClick={() => handleThumbnailClick(animal.imageUrl || "/placeholder-animal.jpg")}
-                        >
-                            <img 
-                                src={animal.imageUrl || "/placeholder-animal.jpg"} 
-                                alt={`${animal.name} thumbnail main`} 
-                                className="thumbnail-image" 
-                            />
-                        </div>
-                        
-                        {/* Additional thumbnails */}
-                        {[1, 2, 3].map((_, index) => (
-                            <div 
-                                key={index} 
-                                className="thumbnail-container"
-                                onClick={() => handleThumbnailClick(animal.images?.[index]?.url || `/placeholder-thumbnail-${index + 1}.jpg`)}
-                            >
-                                <img 
-                                    src={animal.images?.[index]?.url || `/placeholder-thumbnail-${index + 1}.jpg`} 
-                                    alt={`${animal.name} thumbnail ${index + 1}`} 
-                                    className="thumbnail-image" 
-                                />
-                            </div>
-                        ))}
-                    </div>
-                </div>
-                <button 
-                    className="favorite-button-detail"
-                    onClick={toggleFavorite}
-                    aria-label={isFavorite ? "Remove from favorites" : "Add to favorites"}
+            {/* Galería de miniaturas */}
+            <div className="thumbnail-gallery">
+            <div 
+                className="thumbnail-container"
+                onClick={() => handleThumbnailClick(animal.imageUrl || "/placeholder-animal.jpg")}
+            >
+                <img 
+                src={animal.imageUrl || "/placeholder-animal.jpg"} 
+                alt={`${animal.name} miniatura principal`} 
+                className="thumbnail-image" 
+                />
+            </div>
+            
+            {/* Renderizado condicional de miniaturas adicionales */}
+            {animal.images && animal.images.length > 0 ? (
+                animal.images.map((image, index) => (
+                <div 
+                    key={index} 
+                    className="thumbnail-container"
+                    onClick={() => handleThumbnailClick(image.url)}
                 >
-                    {isFavorite ? <FaHeart className="heart-icon filled" /> : <FaRegHeart className="heart-icon" />}
-                </button>
+                    <img 
+                    src={image.url} 
+                    alt={`${animal.name} miniatura ${index + 1}`} 
+                    className="thumbnail-image" 
+                    />
+                </div>
+                ))
+            ) : (
+                // Miniaturas de placeholder cuando no hay imágenes disponibles
+                [1, 2, 3].map((_, index) => (
+                <div 
+                    key={index} 
+                    className="thumbnail-container"
+                    onClick={() => handleThumbnailClick(`/placeholder-thumbnail-${index + 1}.jpg`)}
+                >
+                    <img 
+                    src={`/placeholder-thumbnail-${index + 1}.jpg`} 
+                    alt={`${animal.name} miniatura ${index + 1}`} 
+                    className="thumbnail-image" 
+                    />
+                </div>
+                ))
+            )}
             </div>
         </div>
+        </div>
+    </div>
     </div>
 
+    {/* Sección de información del animal */}
     <div className="animal-info-layout">
-        <div className="animal-main-info">
-            <h1 className="animal-detail-name">{animal.name || "Drako"}</h1>
-            <div className="animal-detail-description">
-                {animal.description || "Información del animal..."}
-            </div>
-
-            <div className="animal-characteristics">
-                <h2>Características</h2>
-                <ul className="characteristics-list">
-                    {animal.characteristics?.map((characteristic, index) => (
-                        <li key={index}>{characteristic}</li>
-                    )) || 
-                    [
-                        "Característica 1",
-                        "Característica 2",
-                        "Característica 3",
-                        "Característica 4",
-                        "Característica 5"
-                    ].map((item, index) => (
-                        <li key={index}>{item}</li>
-                    ))}
-                </ul>
-            </div>
+    {/* Columna izquierda - información principal */}
+    <div className="animal-main-info">
+        <h1 className="animal-detail-name">
+        {animal.name || "Drako"}
+        <button 
+            className="name-favorite-button"
+            onClick={toggleFavorite}
+            aria-label={isFavorite ? "Quitar de favoritos" : "Añadir a favoritos"}
+        >
+            {isFavorite ? <FaHeart className="heart-icon filled" /> : <FaRegHeart className="heart-icon" />}
+        </button>
+        </h1>
+        <div className="animal-detail-description">
+        {animal.description || "Información del animal..."}
         </div>
 
-        {/* Right column - narrower - for overview and share */}
-        <div className="animal-side-info">
-            {/* Overview section */}
-            <div className="animal-overview-section">
-                <h2>Overview</h2>
-                <div className="overview-details">
-                    <div className="overview-item">
-                        <span className="overview-label">Edad:</span>
-                        <span className="overview-value">{animal.age || "Desconocida"}</span>
-                    </div>
-                    <div className="overview-item">
-                        <span className="overview-label">Tamaño:</span>
-                        <span className="overview-value">{animal.size || "Mediano"}</span>
-                    </div>
-                    {/* Add more overview items as needed */}
-                </div>
-            </div>
-
-            {/* Share section */}
-            <div className="share-section">
-                <h3>Compartir</h3>
-                <div className="share-buttons">
-                    <button 
-                        className="share-button facebook"
-                        onClick={() => handleShare('facebook')}
-                        aria-label="Compartir en Facebook"
-                    >
-                        <FaFacebookF className="social-icon" />
-                    </button>
-                    <button 
-                        className="share-button twitter"
-                        onClick={() => handleShare('twitter')}
-                        aria-label="Compartir en Twitter"
-                    >
-                        <FaTwitter className="social-icon" />
-                    </button>
-                    <button 
-                        className="share-button instagram"
-                        onClick={() => handleShare('instagram')}
-                        aria-label="Compartir en Instagram"
-                    >
-                        <FaInstagram className="social-icon" />
-                    </button>
-                    <button 
-                        className="share-button whatsapp"
-                        onClick={() => handleShare('whatsapp')}
-                        aria-label="Compartir en WhatsApp"
-                    >
-                        <FaWhatsapp className="social-icon" />
-                    </button>
-                </div>
-            </div>
+        <div className="animal-characteristics">
+        <h2>Características</h2>
+        <ul className="characteristics-list">
+            {animal.characteristics?.map((characteristic, index) => (
+            <li key={index}>{characteristic}</li>
+            )) || 
+            // Características de ejemplo cuando no hay datos reales
+            [
+            "Característica 1",
+            "Característica 2",
+            "Característica 3"
+            ].map((item, index) => (
+            <li key={index}>{item}</li>
+            ))}
+        </ul>
         </div>
     </div>
+
+    {/* Columna derecha - resumen y compartir */}
+    <div className="animal-side-info">
+        {/* Sección de resumen */}
+        <div className="animal-overview-section">
+        <h2>Overview</h2>
+        <div className="overview-details">                  
+            <div className="overview-item">
+            <span className="overview-value">
+                <FaEye style={{ marginRight: '5px' }} /> {visitCount}
+            </span>
+            </div>
+            
+            <div className="overview-item overview-action-item">
+            <button 
+                className="overview-action-button"
+                onClick={toggleFavorite}
+                aria-label={isFavorite ? "Quitar de favoritos" : "Añadir a favoritos"}
+            >
+                {isFavorite ? 
+                <><FaHeart className="action-icon filled" /> Quitar de favoritos</> : 
+                <><FaRegHeart className="action-icon" /> Añadir a favoritos</>
+                }
+            </button>
+            </div>
+            <div className="overview-item overview-action-item">
+            <button 
+                className="overview-action-button report-button"
+                onClick={handleReport}
+                aria-label="Reportar anuncio"
+            >
+                <FaFlag className="action-icon" /> Reportar anuncio
+            </button>
+            </div>
+        </div>
+        </div>
+
+        {/* Sección de compartir en redes sociales */}
+        <div className="share-section">
+        <h3>Compartir</h3>
+        <div className="share-buttons">
+            {[
+            { platform: 'facebook', icon: <FaFacebookF className="social-icon" /> },
+            { platform: 'twitter', icon: <FaTwitter className="social-icon" /> },
+            { platform: 'instagram', icon: <FaInstagram className="social-icon" /> },
+            { platform: 'whatsapp', icon: <FaWhatsapp className="social-icon" /> }
+            ].map(item => (
+            <button 
+                key={item.platform}
+                className={`share-button ${item.platform}`}
+                onClick={() => handleShare(item.platform)}
+                aria-label={`Compartir en ${item.platform}`}
+            >
+                {item.icon}
+            </button>
+            ))}
+        </div>
+        </div>
+    </div>
+    </div>
+    
+    {/* Modal de reporte - solo se muestra cuando showReportModal es true */}
+    {showReportModal && (
+    <div className="report-modal-overlay">
+        <div className="report-modal">
+        <div className="report-modal-header">
+            <h3>Reportar anuncio</h3>
+            <button 
+            className="close-modal-button"
+            onClick={() => setShowReportModal(false)}
+            aria-label="Cerrar"
+            >
+            ×
+            </button>
+        </div>
+        
+        {/* Formulario para reportar anuncios inapropiados */}
+        <form onSubmit={submitReport} className="report-form">
+            <div className="form-group">
+            <label htmlFor="reason">Motivo del reporte:</label>
+            <select 
+                id="reason" 
+                name="reason" 
+                value={reportForm.reason}
+                onChange={handleReportFormChange}
+                required
+            >
+                <option value="">Seleccione un motivo</option>
+                <option value="Información incorrecta">Información incorrecta</option>
+                <option value="Contenido inapropiado">Contenido inapropiado</option>
+                <option value="Animal ya adoptado">Animal ya adoptado</option>
+                <option value="Otro">Otro</option>
+            </select>
+            </div>
+            
+            <div className="form-group">
+            <label htmlFor="message">Mensaje (opcional):</label>
+            <textarea 
+                id="message" 
+                name="message" 
+                value={reportForm.message}
+                onChange={handleReportFormChange}
+                placeholder="Añada información adicional si lo desea"
+                rows="3"
+            ></textarea>
+            </div>
+            
+            <div className="form-actions">
+            <button 
+                type="button" 
+                className="cancel-button"
+                onClick={() => setShowReportModal(false)}
+            >
+                Cancelar
+            </button>
+            <button 
+                type="submit" 
+                className="submit-button"
+            >
+                Enviar reporte
+            </button>
+            </div>
+        </form>
+        </div>
+    </div>
+    )}
 </div>
 );
 };

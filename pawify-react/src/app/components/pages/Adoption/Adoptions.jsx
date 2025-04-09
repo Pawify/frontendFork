@@ -15,7 +15,7 @@ import React from "react";
 import "./Adoptions.css";
 import AnimalsOverview from "./AnimalsOverwie";
 
-// Sample data for testing
+// Datos de muestra para pruebas
 const animalsList = [
   {
     id: 1,
@@ -25,7 +25,11 @@ const animalsList = [
     descriptionOverview:"Hola, mi nombre es DRAKO Soy el compañero perfectossssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssss sssssssssssssssssdsfjskhudisahnvudfiñshnvudsijñnvhjidñfsvnjidñsfvbidfjsñbvfdj..." ,
     description: "Hola, mi nombre es DRAKO\n\nSoy el compañero perfecto si buscas un amigo tranquilo pero lleno de vitalidad. Con mi carácter equilibrado y leal, solo quiero disfrutar de paseos relajados, momentos de juego y mucho amor. 🏡 ❤️\n\nTengo un corazón lleno de bondad y una energía que contagia alegría. Sería ideal para un hogar que valore la estabilidad y el tiempo de calidad juntos. 🌟\n\nSoy único y estoy listo para conquistar a mi futura familia. 🐕 Eso sí, necesitarás la correspondiente licencia PPP para adoptarme.\n\nSi buscas un amigo leal, dinámico y dispuesto a ser parte de tu vida, ¡ven a conocerme!",
     location: "Madrid",
-    imageUrl: "/public/dog1.png"
+    imageUrl: "/public/dog1.png",
+    images: [
+      { url: "/public/why-us-img.png" },
+      { url: "/public/Hero.png" },
+    ]
   },
   {
     id: 2,
@@ -48,7 +52,8 @@ const animalsList = [
 const Adoptions = () => {
   return (
     <div className="adoptions-container">
-      <section className="logo">
+      {/* Sección de imagen principal (Hero) */}
+      <section className="logo" id="hero-logo-section">
         <img 
           src="/Hero.png" 
           alt="Adoptar es amar - #DontShop" 
@@ -56,17 +61,19 @@ const Adoptions = () => {
         />
       </section>
 
-      {/* Filtro de busqueda */}
+      {/* Sección de filtros de búsqueda */}
       <section className="search-section">
         <div className="search-container">
           <div className="search-filters">
+            {/* Filtro por ubicación */}
             <div className="filter-group location">
               <select 
                 id="location" 
                 className="filter-input"
+                defaultValue=""
               >
                 {/* Aqui pienso que deberiamos rellenar el campo a traves de una consulata a la ciudades que existe en la bbdd */}
-                <option value="" disabled selected>Selecciona una ubicación</option>
+                <option value="" disabled>Selecciona una ubicación</option>
                 <option value="madrid">Madrid</option>
                 <option value="barcelona">Barcelona</option>
                 <option value="valencia">Valencia</option>
@@ -74,12 +81,14 @@ const Adoptions = () => {
               </select>
             </div>
             
+            {/* Filtro por categoría de animal */}
             <div className="filter-group category">
               <select 
                 id="category" 
                 className="filter-input"
+                defaultValue=""
               >
-                <option value="" disabled selected>Selecciona una categoría</option>
+                <option value="" disabled>Selecciona una categoría</option>
                 <option value="dog">Perros</option>
                 <option value="cat">Gatos</option>
                 <option value="bird">Aves</option>
@@ -87,29 +96,30 @@ const Adoptions = () => {
               </select>
             </div>
             
+            {/* Botón para iniciar la búsqueda */}
             <button className="search-button">Buscar</button>
           </div>
         </div>
       </section>
 
-      {/* Animals Overview Section */}
+      {/* Sección de visualización de animales */}
       <section className="animals-section">
         <AnimalsOverview animals={animalsList} />
       </section>
 
-      {/* Call to Action Section */}
+      {/* Sección de llamada a la acción */}
       <section className="cta-section">
-        {/* Call to action content will go here */}
+        {/* Aquí irá el contenido de llamada a la acción */}
       </section>
 
-      {/* Other Sections Access */}
+      {/* Sección de acceso a otras partes de la aplicación */}
       <section className="other-sections">
-        {/* Links to other sections will go here */}
+        {/* Aquí irán los enlaces a otras secciones */}
       </section>
 
-      {/* FAQ Section */}
+      {/* Sección de preguntas frecuentes */}
       <section className="faq-section">
-        {/* FAQ content will go here */}
+        {/* Aquí irá el contenido de preguntas frecuentes */}
       </section>
     </div>
   );

@@ -1,5 +1,5 @@
+/* Contenedor principal */
 .animal-detail-container {
-max-width: 1200px;
 margin: 0 auto;
 padding: 20px;
 font-family: Arial, sans-serif;
@@ -9,7 +9,7 @@ font-family: Arial, sans-serif;
 margin-bottom: 30px;
 }
 
-/* Images section */
+/* Sección de imágenes */
 .animal-images-section {
 max-width: 100%;
 display: flex;
@@ -28,21 +28,15 @@ flex-direction: column;
 flex: 1;
 }
 
-@media (min-width: 768px) {
-.image-gallery-container {
-flex-direction: row;
-gap: 15px;
-align-items: flex-start;
-}
-}
-
+/* Contenedor de imagen principal */
 .main-image-container {
 flex: 2;
 position: relative;
 border-radius: 8px;
 overflow: hidden;
 background-color: #f0f0f0;
-max-width: 600px; /* Limit the width of the main image */
+max-width: 800px; 
+width: 100%; 
 border: 1px solid #e0e0e0;
 }
 
@@ -54,6 +48,7 @@ object-fit: cover;
 display: block;
 }
 
+/* Botón de favoritos */
 .favorite-button-detail {
 position: absolute;
 top: 0;
@@ -80,6 +75,7 @@ color: #999;
 color: #ff4d4d;
 }
 
+/* Galería de miniaturas */
 .thumbnail-gallery {
 display: flex;
 flex-wrap: wrap;
@@ -87,18 +83,10 @@ gap: 10px;
 margin-top: 10px;
 }
 
-@media (min-width: 768px) {
-.thumbnail-gallery {
-flex-direction: column;
-flex-wrap: nowrap;
-margin-top: 0;
-}
-}
-
 .thumbnail-container {
 flex: 1;
-min-width: 60px;
-max-width: 80px;
+min-width: 80px;
+max-width: 100px;
 border-radius: 4px;
 overflow: hidden;
 background-color: #f0f0f0;
@@ -117,20 +105,14 @@ object-fit: cover;
 aspect-ratio: 1/1;
 }
 
-/* Two-column layout for info */
+/* Diseño de información del animal */
 .animal-info-layout {
 display: flex;
 flex-direction: column;
 gap: 30px;
 }
 
-@media (min-width: 768px) {
-.animal-info-layout {
-flex-direction: row;
-}
-}
-
-/* Left column - wider */
+/* Columna izquierda - más ancha */
 .animal-main-info {
 flex: 3;
 display: flex;
@@ -138,7 +120,7 @@ flex-direction: column;
 gap: 25px;
 }
 
-/* Right column - narrower */
+/* Columna derecha - más estrecha */
 .animal-side-info {
 flex: 1;
 display: flex;
@@ -146,12 +128,40 @@ flex-direction: column;
 gap: 25px;
 }
 
-/* Animal basic info (name and description) */
+/* Información básica del animal (nombre y descripción) */
 .animal-detail-name {
 font-size: 28px;
 margin: 0;
 padding-bottom: 10px;
 border-bottom: 1px solid #eee;
+display: flex;
+align-items: center;
+justify-content: space-between;
+}
+
+.name-favorite-button {
+background: transparent;
+border: none;
+cursor: pointer;
+display: flex;
+align-items: center;
+justify-content: center;
+padding: 5px;
+margin-left: 10px;
+transition: transform 0.2s;
+}
+
+.name-favorite-button:hover {
+transform: scale(1.1);
+}
+
+.name-favorite-button .heart-icon {
+font-size: 24px; 
+color: #000; 
+}
+
+.name-favorite-button .heart-icon.filled {
+color: #ff4d4d;
 }
 
 .animal-detail-description {
@@ -161,7 +171,7 @@ color: #555;
 margin-top: 15px;
 }
 
-/* Characteristics section */
+/* Sección de características */
 .animal-characteristics {
 margin-top: 0;
 }
@@ -179,9 +189,16 @@ padding-left: 20px;
 .characteristics-list li {
 margin-bottom: 8px;
 line-height: 1.4;
+cursor: default;
+color: inherit;
 }
 
-/* Overview section */
+.characteristics-list li:hover {
+transform: none;
+color: inherit;
+}
+
+/* Sección de resumen */
 .animal-overview-section {
 background-color: #f9f9f9;
 padding: 15px;
@@ -209,7 +226,7 @@ font-weight: bold;
 color: #666;
 }
 
-/* Share section */
+/* Sección de compartir */
 .share-section {
 margin-top: 20px;
 }
@@ -262,7 +279,7 @@ font-size: 18px;
 color: white;
 }
 
-/* Loading and error states */
+/* Estados de carga y error */
 .loading-container, .error-container {
 display: flex;
 flex-direction: column;
@@ -280,4 +297,224 @@ color: white;
 border: none;
 border-radius: 4px;
 cursor: pointer;
+}
+
+/* Estilos del modal de reporte */
+.report-modal-overlay {
+position: fixed;
+top: 0;
+left: 0;
+right: 0;
+bottom: 0;
+background-color: rgba(0, 0, 0, 0.5);
+display: flex;
+justify-content: center;
+align-items: center;
+z-index: 1000;
+}
+
+.report-modal {
+background-color: white;
+border-radius: 8px;
+width: 90%;
+max-width: 500px;
+padding: 0;
+box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+max-height: 90vh;
+overflow-y: auto;
+}
+
+.report-modal-header {
+display: flex;
+justify-content: space-between;
+align-items: center;
+padding: 15px 20px;
+border-bottom: 1px solid #eee;
+}
+
+.report-modal-header h3 {
+margin: 0;
+color: #333;
+}
+
+.close-modal-button {
+background: none;
+border: none;
+font-size: 24px;
+cursor: pointer;
+color: #666;
+}
+
+.report-form {
+padding: 20px;
+}
+
+.form-group {
+margin-bottom: 15px;
+}
+
+.form-group label {
+display: block;
+margin-bottom: 5px;
+font-weight: 500;
+color: #555;
+}
+
+.form-group input,
+.form-group select,
+.form-group textarea {
+width: 100%;
+padding: 10px;
+border: 1px solid #ddd;
+border-radius: 4px;
+font-size: 14px;
+}
+
+.form-group textarea {
+resize: vertical;
+}
+
+.form-actions {
+display: flex;
+justify-content: flex-end;
+gap: 10px;
+margin-top: 20px;
+}
+
+.cancel-button,
+.submit-button {
+padding: 10px 15px;
+border-radius: 4px;
+font-weight: 500;
+cursor: pointer;
+transition: background-color 0.2s;
+}
+
+.cancel-button {
+background-color: #f1f1f1;
+border: 1px solid #ddd;
+color: #333;
+}
+
+.submit-button {
+background-color: #4CAF50;
+border: none;
+color: white;
+}
+
+.cancel-button:hover {
+background-color: #e5e5e5;
+}
+
+.submit-button:hover {
+background-color: #45a049;
+}
+
+/* Estilos responsivos */
+/* Pantallas pequeñas: miniaturas en fila debajo de la imagen principal */
+@media (max-width: 767px) {
+.image-gallery-container {
+flex-direction: column;
+}
+
+.thumbnail-gallery {
+flex-direction: row;
+justify-content: center;
+}
+}
+
+/* Pantallas medianas: miniaturas a la derecha de la imagen principal */
+@media (min-width: 768px) {
+.image-gallery-container {
+flex-direction: row;
+gap: 15px;
+align-items: flex-start;
+}
+
+.thumbnail-gallery {
+flex-direction: column;
+flex-wrap: nowrap;
+margin-top: 0;
+}
+
+.animal-info-layout {
+flex-direction: row;
+}
+}
+
+/* Estilos responsivos para la galería */
+@media (min-width: 768px) and (max-width: 1039px) {
+.image-gallery-container {
+flex-direction: column;
+gap: 15px;
+align-items: center;
+width: 100%;
+}
+}
+
+@media (min-width: 1040px) {
+.image-gallery-container {
+flex-direction: row;
+gap: 15px;
+align-items: flex-start;
+width: 100%;
+}
+}
+
+/* Pantallas medianas: miniaturas a la derecha de la imagen principal */
+@media (min-width: 768px) and (max-width: 1799px) {
+.image-gallery-container {
+flex-direction: row;
+}
+
+.thumbnail-gallery {
+flex-direction: column;
+margin-left: 15px;
+}
+}
+
+/* Pantallas grandes: miniaturas a la izquierda de la imagen principal */
+@media (min-width: 1800px) {
+.animal-detail-container {
+display: flex;
+gap: 30px;
+max-width: 1800px;
+margin: 0 auto;
+}
+
+.animal-detail-content {
+flex: 1;
+margin-bottom: 0;
+}
+
+.animal-info-layout {
+flex: 1;
+margin-top: 0;
+}
+
+.image-gallery-container {
+flex-direction: row-reverse;
+}
+
+.thumbnail-gallery {
+flex-direction: column !important;
+margin-right: 15px;
+margin-left: 0;
+margin-top: 0;
+justify-content: flex-start;
+height: 100%;
+}
+
+/* Ajustes específicos para pantallas grandes */
+.animal-detail-container .animal-overview-section {
+padding-left: 0 !important;
+}
+
+.animal-detail-container .share-section h3 {
+padding-left: 0 !important;
+}
+
+.animal-detail-container .share-buttons {
+padding-left: 0 !important;
+}
 }
