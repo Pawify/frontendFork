@@ -5,6 +5,7 @@ const theme = {
     accent: "#f4743b", // naranja vibrante
     goldenYellow: "#fcd039", //amarillo dorado
     background: "#fcfbf8", // blanco cálido
+    navBarBcg: "#a0cfe3", //celeste del background del navbar
     deepRed: "#4e1938", // rojo oscuro
     olive: "#bfc47d", // verde oliva claro
     bronze: "#c19875", // bronce suave
