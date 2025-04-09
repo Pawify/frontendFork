@@ -13,7 +13,7 @@ export default function Button({
     <>
       <button
         // onClick={{ onClick }}
-        className={`${className} border-none rounded-[20px] px-5 py-1 mt-4 mb-2 bg-amber-300 hover:bg-amber-400 transition-colors cursor-pointer`}
+        className={`${className} border-none rounded-[20px] px-5 py-1 mt-4 mb-1 bg-amber-300 hover:bg-amber-400 transition-colors cursor-pointer`}
         style={{ fontSize: "12px" }}
       >
         {children}

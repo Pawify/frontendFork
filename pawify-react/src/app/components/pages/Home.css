@@ -51,6 +51,11 @@
   flex-direction: column;
   justify-content: center;
   align-items: center;
+  transition: transform 0.3s ease;
+}
+.service-banner-cc:hover {
+  transform: scale(1.05);
+  transition: transform 0.3s ease;
 }
 .img-service {
   width: 30%;
@@ -68,6 +73,11 @@
 }
 .numbers-banner-card {
   width: 30%;
+  transition: transform 0.3s ease;
+}
+.numbers-banner-card:hover {
+  transform: scale(1.05);
+  transition: transform 0.3s ease;
 }
 .img-numbers {
   width: 100%;
@@ -81,7 +91,7 @@
   text-align: left;
   gap: 5px;
   width: 100%;
-  height: 250px;
+  height: 260px;
 }
 
 .adoption-banner-content {
@@ -155,6 +165,11 @@
   justify-content: center;
   align-items: center;
   box-shadow: 10px 10px 20px #e3e3e3, -10px -10px 20px #ffffff;
+  transition: transform 0.3s ease;
+}
+.why-cards-cc:hover {
+  transform: scale(1.05);
+  transition: transform 0.3s ease;
 }
 .header-left {
   display: flex;
@@ -206,6 +221,11 @@
 }
 .more-cards-cc {
   box-shadow: 10px 10px 20px #e3e3e3, -10px -10px 20px #ffffff;
+  transition: transform 0.3s ease;
+}
+.more-cards-cc:hover {
+  transform: scale(1.05);
+  transition: transform 0.3s ease;
 }
 .img-more-container {
   display: flex;

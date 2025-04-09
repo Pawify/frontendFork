@@ -196,7 +196,7 @@ export default function Home() {
           className="adoption-banner border-none rounded-[10px]"
           style={{ background: vibrantBlue }}
         >
-          <div className="adoption-banner-content">
+          <div className="adoption-banner-content p-1">
             <h2 style={{ color: primary, fontSize: "35px", fontWeight: "700" }}>
               {texts.titleTwo}
             </h2>
