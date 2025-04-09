@@ -25,10 +25,10 @@ const animalsList = [
     descriptionOverview:"Hola, mi nombre es DRAKO Soy el compañero perfectossssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssss sssssssssssssssssdsfjskhudisahnvudfiñshnvudsijñnvhjidñfsvnjidñsfvbidfjsñbvfdj..." ,
     description: "Hola, mi nombre es DRAKO\n\nSoy el compañero perfecto si buscas un amigo tranquilo pero lleno de vitalidad. Con mi carácter equilibrado y leal, solo quiero disfrutar de paseos relajados, momentos de juego y mucho amor. 🏡 ❤️\n\nTengo un corazón lleno de bondad y una energía que contagia alegría. Sería ideal para un hogar que valore la estabilidad y el tiempo de calidad juntos. 🌟\n\nSoy único y estoy listo para conquistar a mi futura familia. 🐕 Eso sí, necesitarás la correspondiente licencia PPP para adoptarme.\n\nSi buscas un amigo leal, dinámico y dispuesto a ser parte de tu vida, ¡ven a conocerme!",
     location: "Madrid",
-    imageUrl: "/public/dog1.png",
+    imageUrl: "/dog1.png",
     images: [
-      { url: "/public/why-us-img.png" },
-      { url: "/public/Hero.png" },
+      { url: "/why-us-img.png" },
+      { url: "/Hero.png" },
     ]
   },
   {
