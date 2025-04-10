@@ -1,0 +1,189 @@
+/*Estilos de NavBar creado por Jhonny Bracho*/
+@font-face {
+  font-family: 'Core-Rhino';
+  src: url('/fonts/Core-Rhino.woff2') format('woff2'),
+      url('/fonts/Core-Rhino.woff') format('woff');
+  font-weight: normal;
+  font-style: normal;
+}
+
+#nav {
+  position: fixed; 
+  left: 0;
+  width: 100%;
+  height: 64px; 
+  z-index: 1000;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 0 40px;
+  gap: 10px;
+  font-family: 'Core-Rhino';
+}
+
+.hamburger-menu {
+  display: none;
+  flex-direction: column;
+  justify-content: space-between;
+  width: 30px;
+  height: 21px;
+  cursor: pointer;
+  z-index: 1001;
+}
+
+.hamburger-line {
+  width: 100%;
+  height: 3px;
+  background-color: #333;
+  transition: all 0.3s ease;
+}
+
+.hamburger-line.open:nth-child(1) {
+  transform: translateY(9px) rotate(45deg);
+}
+
+.hamburger-line.open:nth-child(2) {
+  opacity: 0;
+}
+
+.hamburger-line.open:nth-child(3) {
+  transform: translateY(-9px) rotate(-45deg);
+}
+
+.nav-item {
+  width: 98px;
+  height: 51px;
+  position: center;
+  top: 6px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  font-family: 'Core-Rhino';
+  font-size: 20px;
+  font-weight: 400;
+  line-height: 24px;
+}
+
+.nav-item a {
+  text-decoration: none;
+  color: inherit;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  width: 100%;
+  height: 100%;
+}
+
+.section-one {
+  height: 100%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.section-two {
+  width: 60%;
+}
+
+button:hover {
+  cursor: pointer;
+}
+
+.nav-links {
+  width: 100%;
+  display: flex;
+  padding-top: 10px;
+  gap: 20px;
+}
+
+li {
+  transition: color 0.5s ease;
+  font-weight: 600;
+}
+
+li:hover {
+  color: white;
+}
+
+.section-three {
+  padding-top: 7px;
+}
+
+#profile-btn {
+  height: 45px;
+  width: 45px;
+  border-radius: 50%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+/* Media query for responsive design */
+@media (max-width: 1024px) {
+  .hamburger-menu {
+    display: flex;
+  }
+  
+  .section-two {
+    position: fixed;
+    top: 64px;
+    left: 0;
+    width: 100%;
+    background-color: inherit;
+    height: 0;
+    overflow: hidden;
+    transition: height 0.3s ease;
+    z-index: 1000;
+  }
+  
+  .section-two.open {
+    height: auto;
+    padding: 20px 0;
+    box-shadow: 0 5px 10px rgba(0,0,0,0.1);
+  }
+  
+  .nav-links {
+    flex-direction: column;
+    align-items: center;
+    padding: 0;
+  }
+  
+  .nav-item {
+    margin: 10px 0;
+  }
+}
+
+/* Existing responsive styles */
+@media (max-width: 768px) {
+  #nav {
+    padding: 0 20px;
+  }
+  
+  .section-one {
+    width: auto;
+  }
+  
+  .section-three {
+    padding-top: 0;
+  }
+  
+  #profile-btn {
+    height: 40px;
+    width: 40px;
+  }
+}
+
+@media (max-width: 480px) {
+  #nav {
+    padding: 0 15px;
+  }
+  
+  .logo {
+    max-width: 150px;
+  }
+  
+  #profile-btn {
+    height: 35px;
+    width: 35px;
+  }
+}

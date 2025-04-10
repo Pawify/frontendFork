@@ -1,0 +1,472 @@
+.Home {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  gap: 20px;
+  width: 90%;
+  height: auto;
+  margin: 80px auto;
+  position: relative;
+}
+
+.hero-content {
+  display: flex;
+  flex-direction: row;
+  justify-content: center;
+  align-items: left;
+  gap: 5px;
+}
+.hero-content-left {
+  width: 100%;
+  height: auto;
+}
+.hero-content-right {
+  width: 100%;
+  height: auto;
+}
+.img-hero {
+  margin: 10px;
+  width: 90%;
+  height: 90%;
+}
+
+.service-banner {
+  display: flex;
+  flex-direction: row;
+  justify-content: center;
+  align-items: center;
+  flex-wrap: nowrap;
+  width: 100%;
+  height: auto;
+}
+.service-banner-card {
+  width: 100%;
+  height: 250px;
+}
+.service-banner-card h3 {
+  font-size: 35px;
+}
+.service-banner-cc {
+  width: 100%;
+  height: auto;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  transition: transform 0.3s ease;
+}
+.service-banner-cc:hover {
+  transform: scale(1.05);
+  transition: transform 0.3s ease;
+}
+.img-our-service {
+  width: 30%;
+  height: 30%;
+  padding: 10px;
+}
+
+.numbers-banner {
+  display: flex;
+  flex-direction: row;
+  justify-content: center;
+  align-items: center;
+  text-align: right;
+  gap: 5px;
+}
+.numbers-banner-card {
+  width: 30%;
+  transition: transform 0.3s ease;
+}
+.numbers-banner-card:hover {
+  transform: scale(1.05);
+  transition: transform 0.3s ease;
+}
+.img-numbers {
+  width: 100%;
+  height: 100%;
+}
+.adoption-banner {
+  display: flex;
+  flex-direction: column;
+  justify-content: flex-start;
+  align-items: center;
+  text-align: left;
+  gap: 5px;
+  width: 100%;
+  height: 260px;
+}
+
+.adoption-banner-content {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: flex-start;
+  gap: 10px;
+  width: 50%;
+  height: auto;
+  margin-left: auto;
+}
+.adoption-banner-content h2 {
+  font-size: 35px;
+}
+.service-section {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  gap: 20px;
+  width: 100%;
+}
+.service-content {
+  display: flex;
+  flex-direction: row;
+  justify-content: center;
+  align-items: left;
+  gap: 10px;
+  width: 100%;
+}
+.header-left h2 {
+  font-size: 35px;
+}
+.header-right {
+  margin-top: 50px;
+}
+.header-left,
+.header-right {
+  width: 50%;
+}
+.service-card-container {
+  display: flex;
+  flex-direction: row;
+  justify-content: center;
+  align-items: center;
+  flex-wrap: wrap;
+  gap: 10px;
+  width: 100%;
+  height: auto;
+}
+.img-service {
+  width: 30%;
+  height: 30%;
+  padding: 10px;
+}
+.service-card {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  flex-wrap: wrap;
+  width: 300px;
+  height: 270px;
+  padding: 10px 30px;
+  margin-right: 3rem;
+  background-color: #f2f6f9; /*arreglé el fondo en css porque sino no funciona el hover*/
+}
+.service-card p {
+  font-size: 11px;
+}
+.service-card:hover {
+  background-color: #79c5e6;
+  transition: background-color 0.3s ease;
+}
+
+.why-section {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+.why-content {
+  display: flex;
+  flex-direction: row;
+  justify-content: flex-start;
+  align-items: left;
+  gap: 10px;
+  width: 100%;
+}
+.why-cards-cc {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  box-shadow: 10px 10px 20px #e3e3e3, -10px -10px 20px #ffffff;
+  transition: transform 0.3s ease;
+}
+.why-cards-cc:hover {
+  transform: scale(1.05);
+  transition: transform 0.3s ease;
+}
+.header-left {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: left;
+  width: 50%;
+}
+.img-why-container {
+  display: flex;
+  justify-content: center;
+  align-items: right;
+  width: 50%;
+}
+.img-why {
+  width: 100%;
+  height: 70%;
+  margin: 80px;
+}
+
+.more-section {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+.more-content {
+  display: flex;
+  flex-direction: row;
+  justify-content: flex-start;
+  align-items: left;
+  gap: 10px;
+  width: 100%;
+}
+.more-content .header-left {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: left;
+  width: 50%;
+  height: auto;
+}
+.more-content .header-right {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  width: 50%;
+  height: auto;
+}
+.more-cards-cc {
+  box-shadow: 10px 10px 20px #e3e3e3, -10px -10px 20px #ffffff;
+  transition: transform 0.3s ease;
+}
+.more-cards-cc:hover {
+  transform: scale(1.05);
+  transition: transform 0.3s ease;
+}
+.img-more-container {
+  display: flex;
+  justify-content: flex-end;
+  align-items: right;
+  width: 30%;
+  height: 100%;
+}
+.img-more {
+  width: 75%;
+  height: 90%;
+}
+.img-more-contact {
+  width: 40%;
+  height: 20%;
+}
+
+/*----------------Medias queries--------------*/
+
+/* -------------------Tablets---------------- */
+@media (max-width: 1024px) {
+  .Home {
+    margin: 10px auto;
+  }
+  .img-hero {
+    width: 90%;
+    height: 80%;
+  }
+  .service-banner {
+    flex-wrap: wrap;
+  }
+  .service-banner-card {
+    width: 100%;
+    height: 200px;
+  }
+  .service-banner-card h3,
+  .service-banner-card p {
+    font-size: 25px;
+    text-align: center;
+  }
+  .img-our-service {
+    width: 20%;
+  }
+  .adoption-banner-content h2 {
+    font-size: 26px;
+  }
+  .service-card p {
+    font-size: 13px;
+  }
+  .why-section {
+    position: relative;
+  }
+  .why-content {
+    justify-content: center;
+    align-items: center;
+    position: relative;
+  }
+  .why-cards-cc {
+    justify-content: center;
+    align-items: center;
+    position: relative;
+  }
+  .why-content .header-left {
+    width: 100%;
+  }
+  .img-why-container {
+    width: 50%;
+    position: absolute;
+    left: 355px;
+    bottom: 90px;
+  }
+  .img-why {
+    width: 80%;
+    height: 40%;
+    margin: 5px;
+  }
+
+  .img-more-container {
+    width: 50%;
+    height: 50%;
+  }
+  .img-more {
+    width: 85%;
+    height: 100%;
+  }
+}
+
+/* -------------------Móviles------------------- */
+@media (max-width: 767px) {
+  .Home {
+    margin: 10px auto;
+  }
+  .hero-content {
+    flex-direction: column;
+    gap: 5px;
+  }
+  .service-banner {
+    flex-wrap: wrap;
+    height: auto;
+  }
+  .service-banner-card {
+    flex-wrap: wrap;
+    width: 100%;
+    height: auto;
+  }
+  .service-banner-card h3,
+  .service-banner-card p {
+    font-size: 20px;
+    text-align: center;
+  }
+  .img-our-service {
+    width: 25%;
+    height: 30%;
+    padding: 10px;
+  }
+  .numbers-banner {
+    flex-direction: row;
+    flex-wrap: wrap;
+    text-align: left;
+    gap: 0px;
+  }
+  .numbers-banner-card {
+    width: 100%;
+    height: auto;
+  }
+  .img-numbers {
+    display: none;
+  }
+  .adoption-banner {
+    justify-content: center;
+    align-items: center;
+    text-align: left;
+    gap: 0px;
+    height: auto;
+  }
+  .adoption-banner-content {
+    gap: 0px;
+    width: 100%;
+    height: auto;
+    margin-left: 20px;
+  }
+  .adoption-banner-content h2 {
+    font-size: 15px;
+  }
+  .service-content {
+    flex-direction: column;
+    align-items: center;
+    gap: 0px;
+    width: 100%;
+  }
+  .service-card{
+    padding: 1px 10px;
+    margin-right: 1rem;
+  }
+  .header-left h2 {
+    font-size: 20px;
+  }
+  .header-right {
+    margin-top: 5px;
+  }
+  .header-left,
+  .header-right {
+    width: 100%;
+    height: auto;
+  }
+  .why-section {
+    position: relative;
+  }
+  .why-content {
+    justify-content: center;
+    align-items: center;
+    position: relative;
+  }
+  .why-cards-cc {
+    justify-content: center;
+    align-items: center;
+    position: relative;
+  }
+  .why-content .header-left {
+    width: 100%;
+  }
+  .img-why-container {
+    display: none;
+  }
+  .img-why {
+    display: none;
+  }
+  .img-service {
+    width: 35%;
+    height: 35%;
+    padding: 10px;
+  }
+  .more-section {
+ flex-direction: column;
+  }
+  .more-content {
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    gap: 1px;
+  }
+  .more-content .header-left {
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    width: 100%;
+  }
+  .more-content .header-right {
+    width: 100%;
+  }
+  .img-more-container {
+    width: 100%;
+  }
+  .img-more {
+    width: 100%;
+  }
+
+  
+}

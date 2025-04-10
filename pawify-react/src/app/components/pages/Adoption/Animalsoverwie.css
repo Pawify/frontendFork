@@ -1,0 +1,157 @@
+/* Contenedor principal de las tarjetas */
+.animals-overview-container {
+width: 100%;
+margin-top: 20px;
+}
+
+/* Grid para organizar las tarjetas */
+.animals-grid {
+display: grid;
+grid-template-columns: repeat(3, 1fr);
+gap: 20px;
+justify-content: center;
+}
+
+/* Estilos de la tarjeta individual */
+.animal-card {
+background-color: #F2F6F9;
+box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+overflow: hidden;
+transition: transform 0.3s ease, box-shadow 0.3s ease;
+width: 100%;
+max-width: 376px;
+height: 400px; 
+display: flex;
+flex-direction: column;
+margin: 0 auto;
+}
+
+.animal-card:hover {
+transform: translateY(-5px);
+box-shadow: 0 6px 12px rgba(0, 0, 0, 0.15);
+}
+
+/* Contenedor de la imagen */
+.animal-image-container {
+width: 100%;
+height: 300px; 
+overflow: hidden;
+}
+
+.animal-image {
+width: 100%;
+height: 100%;
+object-fit: cover;
+transition: transform 0.3s ease;
+}
+
+.animal-card:hover .animal-image {
+transform: scale(1.05);
+}
+
+/* Información del animal */
+.animal-info {
+padding: 12px;
+flex-grow: 1;
+display: flex;
+flex-direction: column;
+}
+
+/* Contenedor para nombre y botón favorito */
+.name-favorite-container {
+display: flex;
+align-items: center;
+justify-content: space-between;
+margin-bottom: 5px;
+}
+
+.animal-name {
+font-size: 30px;
+font-weight: 600;
+margin: 0;
+color: #333;
+flex-grow: 1;
+}
+
+.animal-location {
+font-size: 14px;
+color: #666;
+margin: 0 0 5px 0;
+display: flex;
+align-items: center;
+}
+
+.animal-description {
+font-size: 14px;
+color: #666;
+margin: 0;
+overflow: hidden;
+text-overflow: ellipsis;
+display: -webkit-box;
+-webkit-box-orient: vertical;
+}
+
+/* Iconos */
+.favorite-button {
+background: transparent;
+
+display: flex;
+align-items: center;
+justify-content: center;
+cursor: pointer;
+transition: all 0.2s ease;
+}
+
+.favorite-button:hover {
+transform: scale(1.2);
+}
+
+.heart-icon {
+font-size: 30px;
+color: #000000;
+}
+
+.heart-icon.filled {
+color: #f01b1b;
+}
+
+.paw-icon {
+margin-right: 5px;
+color: #666;
+}
+
+/* Responsive para tablets */
+@media (max-width: 992px) {
+.animals-grid {
+grid-template-columns: repeat(auto-fill, minmax(280px, 376px));
+}
+}
+
+/* Responsive para móviles */
+@media (max-width: 576px) {
+.animals-grid {
+grid-template-columns: 1fr;
+}
+
+.animal-card {
+max-width: 100%;
+}
+}
+
+.animal-card-clickable {
+cursor: pointer;
+display: flex;
+flex-direction: column;
+height: 100%;
+transition: transform 0.2s ease, box-shadow 0.2s ease;
+}
+
+.animal-card-clickable:hover {
+transform: translateY(-5px);
+box-shadow: 0 5px 15px rgba(0, 0, 0, 0.1);
+}
+
+.animal-card-clickable:focus {
+outline: 2px solid #4a90e2;
+outline-offset: 2px;
+}
