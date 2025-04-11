@@ -5,6 +5,7 @@ import theme from "@/constants/themes";
 import { Link } from "react-router-dom";
 import { useNavigate } from 'react-router-dom';
 import { profileSvg } from "./svg";
+import logoImage from '/LogoPaw.png'
 
 const NavBar = () => {
   const navigate = useNavigate(); // hook para redirigir
@@ -23,7 +24,7 @@ const NavBar = () => {
       <div className="section-one">
         <Link to="/" id="logo-link">
           <img 
-            src={`${process.env.PUBLIC_URL}/LogoPaw.png`} 
+            src= {logoImage}
             alt="Logo PawPaw"
             className="logo" 
             style={{ 
