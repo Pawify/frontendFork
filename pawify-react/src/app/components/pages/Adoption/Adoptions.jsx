@@ -14,6 +14,7 @@
 import React from "react";
 import "./Adoptions.css";
 import AnimalsOverview from "./AnimalsOverwie";
+import Hero from "/Hero.png";
 
 // Datos de muestra para pruebas
 const animalsList = [
@@ -55,7 +56,7 @@ const Adoptions = () => {
       {/* Sección de imagen principal (Hero) */}
       <section className="logo" id="hero-logo-section">
         <img 
-          src="/Hero.png" 
+          src={Hero}
           alt="Adoptar es amar - #DontShop" 
           className="hero-image"
         />

@@ -12,6 +12,7 @@ const NavBar = () => {
   const [menuOpen, setMenuOpen] = useState(false);
 
   const handleProfileClick = () => {
+    setMenuOpen(false); // Cierra el menú al hacer clic en el botón de perfil
     navigate('login'); // Aquí pones la ruta a la que quieres redirigir
   };
 
@@ -19,10 +20,15 @@ const NavBar = () => {
     setMenuOpen(!menuOpen);
   };
 
+  
+  const handleNavLinkClick = () => {
+    setMenuOpen(false); 
+  };
+
   return (
     <nav id="nav" style={{ backgroundColor: theme.colors.secondary, height: '64px' }}>
       <div className="section-one">
-        <Link to="/" id="logo-link">
+        <Link to="/" id="logo-link" onClick={handleNavLinkClick}>
           <img 
             src= {logoImage}
             alt="Logo PawPaw"
@@ -46,12 +52,12 @@ const NavBar = () => {
       
       <div className={`section-two ${menuOpen ? 'open' : ''}`}>
         <ul className="nav-links">
-          <li className="nav-item"><Link to="/">Home</Link></li>
-          <li className="nav-item"><Link to="/adopciones">Adopciones</Link></li>
-          <li className="nav-item"><Link to="/voluntarios">Voluntarios</Link></li>
-          <li className="nav-item"><Link to="/blog">Blog</Link></li>
-          <li className="nav-item"><Link to="/servicios">Servicios</Link></li>
-          <li className="nav-item"><Link to="/tienda">Tienda</Link></li>
+          <li className="nav-item"><Link to="/" onClick={handleNavLinkClick}>Home</Link></li>
+          <li className="nav-item"><Link to="/adopciones" onClick={handleNavLinkClick}>Adopciones</Link></li>
+          <li className="nav-item"><Link to="/voluntarios" onClick={handleNavLinkClick}>Voluntarios</Link></li>
+          <li className="nav-item"><Link to="/blog" onClick={handleNavLinkClick}>Blog</Link></li>
+          <li className="nav-item"><Link to="/servicios" onClick={handleNavLinkClick}>Servicios</Link></li>
+          <li className="nav-item"><Link to="/tienda" onClick={handleNavLinkClick}>Tienda</Link></li>
         </ul>
       </div>
       

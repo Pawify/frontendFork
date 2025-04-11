@@ -1,4 +1,15 @@
 /* Contenedor principal */
+.animal {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    gap: 20px;
+    width: 90%;
+    height: auto;
+    margin: 70px auto;
+    position: relative;
+}
 .animal-detail-container {
 margin: 0 auto;
 padding: 20px;
@@ -48,32 +59,7 @@ object-fit: cover;
 display: block;
 }
 
-/* Botón de favoritos */
-.favorite-button-detail {
-position: absolute;
-top: 0;
-right: 0;
-background: white;
-border: none;
-border-radius: 50%;
-width: 40px;
-height: 40px;
-display: flex;
-align-items: center;
-justify-content: center;
-cursor: pointer;
-box-shadow: 0 2px 5px rgba(0, 0, 0, 0.2);
-margin: 10px;
-}
 
-.heart-icon {
-font-size: 20px;
-color: #999;
-}
-
-.heart-icon.filled {
-color: #ff4d4d;
-}
 
 /* Galería de miniaturas */
 .thumbnail-gallery {

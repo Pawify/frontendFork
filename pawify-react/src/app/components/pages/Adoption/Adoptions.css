@@ -1,17 +1,17 @@
-/* Contenedor principal */
+/* Main container */
 .adoptions-container {
-  max-width: 1200px;
-  margin: auto; 
-  width: 100%;
-}
-
-/* Sección de imagen hero */
-.hero-image {
-  max-width: 100%;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  width: 90%;
   height: auto;
+  margin: 80px auto;
+  position: relative;
+  max-width: 1200px;
 }
 
-/* Estilos responsivos para la sección del logo */
+/* Hero section */
 #hero-logo-section {
   width: 100%;
   display: flex;
@@ -26,16 +26,17 @@
   object-fit: contain; 
 }
 
-/* Estilos generales de secciones */
-section {
-  padding: 10px;
+.hero-image {
+  max-width: 100%;
+  height: auto;
 }
 
-/* Sección de búsqueda */
+/* Search section */
 .search-container {
   display: flex;
   padding: 20px;
   justify-content: center;
+  width: 100%;
 }
 
 .search-filters {
@@ -47,7 +48,11 @@ section {
   width: 100%;
 }
 
-/* Estilos de los inputs de filtro */
+/* Filter inputs */
+.filter-group {
+  width: 100%;
+}
+
 .filter-input {
   width: 100%;
   padding: 12px 35px 12px 15px;
@@ -55,9 +60,15 @@ section {
   border-radius: 8px;
   font-size: 14px;
   background-color: white;
+  transition: border-color 0.3s ease;
 }
 
-/* Botón de búsqueda */
+.filter-input:focus {
+  border-color: #79c5e6;
+  outline: none;
+}
+
+/* Search button */
 .search-button {
   background-color: #FCD039;
   color: #333;
@@ -67,48 +78,53 @@ section {
   font-size: 16px;
   font-weight: 600;
   cursor: pointer;
-  transition: background-color 0.3s;
+  transition: background-color 0.3s ease, transform 0.3s ease;
   white-space: nowrap;
 }
 
-/* Ajustes responsivos para tablets */
-@media (max-width: 768px) {
+.search-button:hover {
+  background-color: #f8c000;
+  transform: scale(1.05);
+}
+
+/* Animals section */
+.animals-section {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  gap: 20px;
+  width: 100%;
+  padding: 20px 0;
+}
+
+/* General section styles */
+section {
+  padding: 10px;
+  width: 100%;
+}
+
+/* Media queries for tablets */
+@media (max-width: 1024px) {
   .adoptions-container {
-    padding: 0 10px;
+    margin: 10px auto;
+    padding: 0 15px;
   }
   
   .search-container {
-    padding: 10px;
+    padding: 15px;
   }
   
   .search-filters {
-    flex-direction: column;
-    width: 100%;
-    gap: 15px;
-  }
-  
-  .filter-group {
-    width: 100%;
-  }
-  
-  .filter-input {
-    font-size: 14px;
-    padding: 10px 15px;
-  }
-  
-  .search-button {
-    width: 100%;
-    margin-top: 5px;
-    font-size: 16px;
-    padding: 12px 20px;
+    flex-wrap: wrap;
   }
 }
 
-/* Ajustes para pantallas muy pequeñas (móviles) */
-@media (max-width: 480px) {
+/* Media queries for mobile devices */
+@media (max-width: 767px) {
   .adoptions-container {
     padding: 0 10px;
     width: 100%;
+    margin: 10px auto;
   }
   
   #hero-logo-section {
@@ -122,14 +138,6 @@ section {
     width: 100%;
     max-width: 100%;
     height: auto;
-    object-fit: contain;
-    display: block;
-  }
-  
-  section {
-    padding: 20px 10px;
-    width: 100%;
-    box-sizing: border-box;
   }
   
   .search-container {
@@ -137,7 +145,9 @@ section {
   }
   
   .search-filters {
-    gap: 10px;
+    flex-direction: column;
+    width: 100%;
+    gap: 15px;
   }
   
   .filter-input {
@@ -146,19 +156,23 @@ section {
   }
   
   .search-button {
+    width: 100%;
+    margin-top: 5px;
     font-size: 14px;
     padding: 10px 15px;
   }
   
-  /* Ajustes adicionales para la sección de animales en móvil */
   .animals-section {
     display: flex;
     flex-direction: column;
     align-items: center;
   }
   
-  /* Estilos para que las tarjetas de animales se vean mejor en móvil */
   .animals-section > div {
     width: 100%;
+  }
+  
+  section {
+    padding: 20px 10px;
   }
 }

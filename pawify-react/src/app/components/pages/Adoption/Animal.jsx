@@ -94,20 +94,12 @@ return (
 
 // Renderizado principal del componente
 return (
+<div className="animal">
 <div className="animal-detail-container">
     {/* Sección de imágenes y galería */}
     <div className="animal-detail-content">
     <div className="animal-images-section">
-        <div className="favorite-button-container">
-        <button 
-            className="favorite-button-detail"
-            onClick={toggleFavorite}
-            aria-label={isFavorite ? "Quitar de favoritos" : "Añadir a favoritos"}
-        >
-            {isFavorite ? <FaHeart className="heart-icon filled" /> : <FaRegHeart className="heart-icon" />}
-        </button>
-        </div>
-        
+              
         <div className="images-container">
         <div className="image-gallery-container">
             {/* Imagen principal */}
@@ -330,6 +322,7 @@ return (
         </div>
     </div>
     )}
+</div>
 </div>
 );
 };
