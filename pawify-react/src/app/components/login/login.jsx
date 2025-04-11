@@ -4,6 +4,7 @@ import theme from "../../../constants/themes";
 import { useForm } from "react-hook-form";
 import { Link } from "react-router-dom";
 import { useNavigate } from "react-router-dom";
+import Logo from '/Logo.png'
 
 export default function Login() {
   const {
@@ -31,7 +32,7 @@ export default function Login() {
       <div className="w-full max-w-md rounded-2xl p-5">
         <div className="flex flex-col items-center mb-5">
           <img
-            src="Logo.png"
+            src={Logo}
             alt="Logo"
             className="w-20 h-20 mb-2 rounded-sm"
           />
