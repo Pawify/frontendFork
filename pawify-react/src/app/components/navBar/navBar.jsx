@@ -23,8 +23,8 @@ const NavBar = () => {
       <div className="section-one">
         <Link to="/" id="logo-link">
           <img 
-            src="/LogoPaw.png" 
-            alt="Logo PawPaw" 
+            src={`${process.env.PUBLIC_URL}/LogoPaw.png`} 
+            alt="Logo PawPaw"
             className="logo" 
             style={{ 
               maxWidth: '197px', 
@@ -45,12 +45,12 @@ const NavBar = () => {
       
       <div className={`section-two ${menuOpen ? 'open' : ''}`}>
         <ul className="nav-links">
-          <li className="nav-item"><a href="/">Home</a></li>
-          <li className="nav-item"><a href="/adopciones">Adopciones</a></li>
-          <li className="nav-item"><a href="/voluntarios">Voluntarios</a></li>
-          <li className="nav-item"><a href="/blog">Blog</a></li>
-          <li className="nav-item"><a href="/servicios">Servicios</a></li>
-          <li className="nav-item"><a href="/tienda">Tienda</a></li>
+          <li className="nav-item"><Link to="/">Home</Link></li>
+          <li className="nav-item"><Link to="/adopciones">Adopciones</Link></li>
+          <li className="nav-item"><Link to="/voluntarios">Voluntarios</Link></li>
+          <li className="nav-item"><Link to="/blog">Blog</Link></li>
+          <li className="nav-item"><Link to="/servicios">Servicios</Link></li>
+          <li className="nav-item"><Link to="/tienda">Tienda</Link></li>
         </ul>
       </div>
       
