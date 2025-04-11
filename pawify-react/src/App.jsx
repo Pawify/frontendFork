@@ -12,7 +12,7 @@ import "./App.css";
 
 function App() {
   return (
-    <Router basename="/frontend">
+    <Router basename="/frontend/">
       <div className="app-container">
         <header className="header">
           <NavBar />

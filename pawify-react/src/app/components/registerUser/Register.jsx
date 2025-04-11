@@ -94,7 +94,7 @@ export default function Register() {
       <div className={`w-full max-w-md rounded-2xl p-5`}>
         <div className="flex flex-col items-center mb-5">
           <img
-            src="/Logo.png"
+            src="Logo.png"
             alt="Logo"
             className="w-20 h-20 mb-2 rounded-sm"
           />

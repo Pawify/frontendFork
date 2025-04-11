@@ -39,9 +39,25 @@ if (!animal && id) {
 
 // Establecer imagen principal si hay datos del animal
 if (animal) {
-    setMainImage(animal.imageUrl || "/placeholder-animal.jpg");
+    // Obtener URL de la imagen o usar placeholder
+    const imageUrl = animal.imageUrl || "/placeholder-animal.jpg";
+    
+    // Formatear URL para asegurar que sea accesible
+    const formattedUrl = formatImageUrl(imageUrl);
+    
+    setMainImage(formattedUrl);
 }
 }, [animal, id]);
+
+// Función auxiliar para formatear URLs de imágenes
+const formatImageUrl = (url) => {
+    // Si la URL ya comienza con http o /, la dejamos como está
+    if (url.startsWith('http') || url.startsWith('/')) {
+        return url;
+    }
+    // Si no, añadimos el prefijo /frontend/
+    return `/frontend/${url}`;
+};
 
 // Efecto para simular contador de visitas
 useEffect(() => {
@@ -56,7 +72,11 @@ const toggleFavorite = () => setIsFavorite(!isFavorite);
 
 const handleShare = (platform) => console.log(`Compartiendo en ${platform}`);
 
-const handleThumbnailClick = (imageUrl) => setMainImage(imageUrl);
+// Modificar la función handleThumbnailClick para manejar rutas correctamente
+const handleThumbnailClick = (imageUrl) => {
+    // Formatear URL y actualizar imagen principal
+    setMainImage(formatImageUrl(imageUrl));
+};
 
 const handleReport = () => setShowReportModal(true);
 
@@ -99,13 +119,12 @@ return (
     {/* Sección de imágenes y galería */}
     <div className="animal-detail-content">
     <div className="animal-images-section">
-              
         <div className="images-container">
         <div className="image-gallery-container">
             {/* Imagen principal */}
             <div className="main-image-container">
             <img 
-                src={mainImage || animal.imageUrl || "/placeholder-animal.jpg"} 
+                src={mainImage || formatImageUrl(animal.imageUrl || "/placeholder-animal.jpg")} 
                 alt={animal.name || "Animal sin nombre"} 
                 className="main-image" 
             />
@@ -118,7 +137,7 @@ return (
                 onClick={() => handleThumbnailClick(animal.imageUrl || "/placeholder-animal.jpg")}
             >
                 <img 
-                src={animal.imageUrl || "/placeholder-animal.jpg"} 
+                src={formatImageUrl(animal.imageUrl || "/placeholder-animal.jpg")} 
                 alt={`${animal.name} miniatura principal`} 
                 className="thumbnail-image" 
                 />
@@ -133,7 +152,7 @@ return (
                     onClick={() => handleThumbnailClick(image.url)}
                 >
                     <img 
-                    src={image.url} 
+                    src={formatImageUrl(image.url || "/placeholder-animal.jpg")} 
                     alt={`${animal.name} miniatura ${index + 1}`} 
                     className="thumbnail-image" 
                     />
