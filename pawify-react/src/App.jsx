@@ -9,6 +9,7 @@ import Footer from "./app/components/footer/Footer";
 import Adoptions from "./app/components/pages/Adoption/Adoptions";
 import Animal from "./app/components/pages/Adoption/Animal";
 import "./App.css"; 
+import Dashboard from "./app/components/dashboard/Dashboard";
 
 function App() {
   return (
@@ -23,6 +24,7 @@ function App() {
             <Route path="/" element={<Home />} />
             <Route path="/register" element={<Register />} />
             <Route path="/login" element={<Login />} />
+            <Route path="/dashboard" element={<Dashboard />} />
             <Route path="/adopciones" element={<Adoptions />} />
             <Route path="/animal/:id" element={<Animal />} />
             <Route path="*" element={<NotFound />} />
