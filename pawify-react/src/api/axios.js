@@ -8,13 +8,14 @@
     Historial de modificaciones:
     - 01/04/2025: Creación inicial de la conexión con el backend.
     - 05/04/2025: Conexion con el backend nuevo. 
-    - [Fecha]: [Descripción de la modificación]
+    - 12/04/25: Modifiacion baseURL actualizado (Jhonny Bracho)
+    - [Fecha]: [Descripción de la modificación] 
 */}
 import axios from 'axios';
 
 // Creamos una instancia de axios con la URL base de la API
 const api = axios.create({
-baseURL: 'http://13.60.236.64:8000',
+baseURL: 'http://ec2-56-228-22-175.eu-north-1.compute.amazonaws.com/',
 headers: {
     'Content-Type': 'application/json',
     'Accept': 'application/json',

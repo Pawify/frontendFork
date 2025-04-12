@@ -2,10 +2,11 @@ import React, { useState } from "react";
 import "./Animalsoverwie.css";
 import { FaPaw, FaHeart, FaRegHeart } from "react-icons/fa";
 import { useNavigate } from "react-router-dom";
+import api from "@/api/axios";
 
-const AnimalsOverview = ({ animals = [] }) => {
-const [favorites, setFavorites] = useState({});
-const navigate = useNavigate();
+const AnimalsOverview = ({ animals }) => {
+    const [favorites, setFavorites] = useState({});
+    const navigate = useNavigate();
 
 const toggleFavorite = (animalId) => {
 setFavorites(prev => ({
@@ -50,7 +51,7 @@ return (
         >
         <div className="animal-image-container">
             <img 
-            src={animal.imageUrl || "/placeholder-animal.jpg"} 
+            src={`${api.defaults.baseURL}${animal.image}`} 
             alt={animal.name || "Animal sin nombre"} 
             className="animal-image" 
             />
