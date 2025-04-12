@@ -10,6 +10,7 @@
 #nav {
   position: fixed; 
   left: 0;
+  top: 0;
   width: 100%;
   height: 64px; 
   z-index: 1000;
@@ -51,17 +52,11 @@
 }
 
 .nav-item {
-  width: 98px;
-  height: 51px;
   position: center;
-  top: 6px;
   display: flex;
   justify-content: center;
   align-items: center;
-  font-family: 'Core-Rhino';
   font-size: 20px;
-  font-weight: 400;
-  line-height: 24px;
 }
 
 .nav-item a {
@@ -93,7 +88,7 @@ button:hover {
   width: 100%;
   display: flex;
   padding-top: 10px;
-  gap: 20px;
+  gap: 30px;
 }
 
 li {
@@ -138,7 +133,6 @@ li:hover {
   
   .section-two.open {
     height: auto;
-    padding: 20px 0;
     box-shadow: 0 5px 10px rgba(0,0,0,0.1);
   }
   
@@ -146,10 +140,13 @@ li:hover {
     flex-direction: column;
     align-items: center;
     padding: 0;
+    gap: 0;
+
   }
   
   .nav-item {
     margin: 10px 0;
+    font-size: 18px;
   }
 }
 

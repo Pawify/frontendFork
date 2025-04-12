@@ -1,2 +1,8 @@
 @import "tailwindcss";
 @import "tw-animate-css";
+* { 
+    /*Fuente Euclid general*/ 
+    font-family: 'Euclid Circular B', sans-serif; 
+    /*Fuente Core Rhino titulos*/ 
+    /*font-family: 'Core Rhino 55 Medium', sans-serif;*/ 
+}
