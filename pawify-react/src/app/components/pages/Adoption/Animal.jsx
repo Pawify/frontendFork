@@ -1,7 +1,20 @@
+{/*
+    Componente: Adoptions
+    Fecha: 07/04/2025 
+    Autor: PabloRM
+    Descripción: Página de detalle de animal en adopción que muestra información completa, 
+    galería de imágenes, características del animal y opciones para compartir o reportar el anuncio.
+    
+    Historial de modificaciones:
+    - 07/04/2025 : Creación inicial del componente
+    - 15/04/2025: Conexion con la api (PabloRM)
+    - [Fecha]: [Descripción de la modificación]
+*/}
 import React, { useState, useEffect } from "react";
 import { useParams, useLocation, useNavigate } from "react-router-dom";
 import { FaHeart, FaRegHeart, FaFacebookF, FaTwitter, FaInstagram, FaWhatsapp, FaEye, FaFlag } from "react-icons/fa";
 import "./Animal.css";
+import api from "@/api/axios"; 
 
 const Animal = () => {
 // Estados para gestionar la información y comportamiento del componente
@@ -39,24 +52,20 @@ if (!animal && id) {
 
 // Establecer imagen principal si hay datos del animal
 if (animal) {
-    // Obtener URL de la imagen o usar placeholder
-    const imageUrl = animal.imageUrl || "/placeholder-animal.jpg";
-    
-    // Formatear URL para asegurar que sea accesible
-    const formattedUrl = formatImageUrl(imageUrl);
-    
-    setMainImage(formattedUrl);
+    // Usar la misma lógica que en AnimalsOverwie.jsx para obtener la imagen
+    const imageUrl = animal.image ? `${api.defaults.baseURL}${animal.image}` : "/placeholder-animal.jpg";
+    setMainImage(imageUrl);
 }
 }, [animal, id]);
 
 // Función auxiliar para formatear URLs de imágenes
 const formatImageUrl = (url) => {
-    // Si la URL ya comienza con http o /, la dejamos como está
+    // Si la URL ya comienza con http o es un placeholder, la dejamos como está
     if (url.startsWith('http') || url.startsWith('/')) {
         return url;
     }
-    // Si no, añadimos el prefijo /frontend/
-    return `/frontend/${url}`;
+    // Si no, añadimos el baseURL de la API
+    return `${api.defaults.baseURL}${url}`;
 };
 
 // Efecto para simular contador de visitas

@@ -1,3 +1,17 @@
+{/*
+    Componente: Adoptions
+    Fecha: 07/04/2025 
+    Autor: PabloRM
+    
+    Descripción: Componente que muestra una cuadrícula de tarjetas de animales disponibles para adopción.
+    Permite visualizar imágenes, nombres, ubicaciones y descripciones breves de los animales,
+    marcarlos como favoritos y navegar al detalle de cada animal al hacer clic en su tarjeta.
+    
+    Historial de modificaciones:
+    - 07/04/2025 : Creación inicial del componente
+    - 12/04/2025: Conexion con la api (Jhonny Bracho)
+    - [Fecha]: [Descripción de la modificación]
+*/}
 import React, { useState } from "react";
 import "./Animalsoverwie.css";
 import { FaPaw, FaHeart, FaRegHeart } from "react-icons/fa";
