@@ -28,31 +28,31 @@ export default function Anuncios() {
       {/* Estadísticas */}
       <div className="grid grid-cols-1 sm:grid-cols-2 gap-4 mb-5">
         <div className="flex items-center space-x-4">
-          <FileText className="h-10 w-10" />
+          <FileText className="border-none rounded-full p-3 h-auto w-18 bg-[rgb(222,246,255)]" />
           <div>
             <p className="font-semibold">Todos los anuncios</p>
-            <p className="text-gray-600">8</p>
+            <p className="text-gray-600 text-2xl">8</p>
           </div>
         </div>
-        <div className="flex items-center space-x-4">
-          <FileCheck className="h-10 w-10" />
+        <div className="flex items-center space-x-4 ">
+          <FileCheck className="border-none rounded-full p-3 h-auto w-18 bg-[rgb(219,246,230)]" />
           <div>
-            <p className="font-semibold">Anuncios publicados</p>
-            <p className="text-gray-600">8</p>
+            <p className="font-semibold ">Anuncios publicados</p>
+            <p className="text-gray-600 text-2xl">8</p>
           </div>
         </div>
         <div className="flex items-center space-x-4">
-          <Bell className="h-10 w-10" />
+          <Bell className="border-none rounded-full p-3 h-auto w-18 bg-[rgb(255,239,219)]" />
           <div>
             <p className="font-semibold">Anuncios pendientes</p>
-            <p className="text-gray-600">8</p>
+            <p className="text-gray-600 text-2xl">8</p>
           </div>
         </div>
         <div className="flex items-center space-x-4">
-          <FileX className="h-10 w-10" />
+          <FileX className="border-none rounded-full p-3 h-auto w-18 bg-[rgb(255,243,244)]" />
           <div>
             <p className="font-semibold">Anuncios expirados</p>
-            <p className="text-gray-600">8</p>
+            <p className="text-gray-600 text-2xl">8</p>
           </div>
         </div>
       </div>
