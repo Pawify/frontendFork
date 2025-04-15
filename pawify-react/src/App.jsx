@@ -8,6 +8,8 @@ import NavBar from "./app/components/navBar/navBar";
 import Footer from "./app/components/footer/Footer"; 
 import Adoptions from "./app/components/pages/Adoption/Adoptions";
 import Animal from "./app/components/pages/Adoption/Animal";
+import Blog from "./app/components/pages/Blog/pages/BlogHome";
+import BlogPost from "./app/components/pages/Blog/pages/BlogArticle";
 import "./App.css"; 
 
 function App() {
@@ -25,6 +27,8 @@ function App() {
             <Route path="/login" element={<Login />} />
             <Route path="/adopciones" element={<Adoptions />} />
             <Route path="/animal/:id" element={<Animal />} />
+            <Route path="/blog" element={<Blog />} />
+            <Route path="/blog/:id" element={<BlogPost />} />
             <Route path="*" element={<NotFound />} />
           </Routes>
         </main>
