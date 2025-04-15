@@ -5,6 +5,7 @@ import { useForm } from "react-hook-form";
 import { Link } from "react-router-dom";
 import { useNavigate } from "react-router-dom";
 import Logo from '/Logo.png'
+import axios from "axios";
 
 export default function Login() {
   const {
@@ -18,8 +19,21 @@ export default function Login() {
   const [showPassword, setShowPassword] = useState(false);
   const { background, primary, accent, deepRed } = theme.colors;
 
-  const onSubmit = (data) => {
+  const onSubmit = async (data) => {
     console.log(data);
+    try {
+      const response = await axios.post(
+        "https://pawify-backend.onrender.com/api/auth/login", {
+          username: data.identifier,
+          password: data.password,
+        });
+      console.log(response.data);
+      localStorage.setItem("access_token", response.data.access);
+      localStorage.setItem("refresh_token", JSON.stringify(response.data.refresh));
+      navigate("/dashboard");
+      } catch (error){
+        console.error("Error de autenticación", error);
+      }
     reset();
     navigate("/");
   };
