@@ -2,7 +2,7 @@ import React, { useState, useEffect } from 'react';
 import { useParams } from 'react-router-dom';
 import BlogPost from '@/components/features/Blog/BlogPost';
 import mockPosts from '@/components/features/Blog/mockPosts';
-import './Blog.css';
+import './BlogPages.css';
 
 
 const BlogArticle = () => {

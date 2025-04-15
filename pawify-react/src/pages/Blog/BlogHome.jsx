@@ -8,7 +8,7 @@
     - [Fecha]: [Descripción de la modificación]
 */}
 import React, { useState, useEffect } from 'react';
-import './Blog.css';
+import './BlogPages.css';
 import Hero from "/cat_dog_heros.png";
 import BlogList from '@/components/features/Blog/BlogList';
 import mockPosts from '@/components/features/Blog/mockPosts';

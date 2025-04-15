@@ -1,6 +1,6 @@
 import React from 'react';
 import { Link } from 'react-router-dom';
-import '../../../pages/Blog/Blog.css';
+import './BlogComponents.css';
 
 const BlogList = ({ posts }) => {
 return (
