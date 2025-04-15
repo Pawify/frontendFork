@@ -4,7 +4,7 @@ import theme from "../../../constants/themes";
 import { useForm } from "react-hook-form";
 import { Link } from "react-router-dom";
 import { useNavigate } from "react-router-dom";
-import Logo from '/Logo.png'
+import Logo from "/Logo.png";
 
 export default function Login() {
   const {
