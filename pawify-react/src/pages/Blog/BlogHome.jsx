@@ -8,10 +8,10 @@
     - [Fecha]: [Descripción de la modificación]
 */}
 import React, { useState, useEffect } from 'react';
-import BlogList from '../BlogList';
-import mockPosts from '../mockPosts';
-import '../blog.css';
+import '@/app/components/pages/Blog/blog.css';
 import Hero from "/cat_dog_heros.png";
+import BlogList from '@/app/components/pages/Blog/BlogList';
+import mockPosts from '@/app/components/pages/Blog/mockPosts';
 
 const BlogHome = () => {
 const [posts, setPosts] = useState([]);

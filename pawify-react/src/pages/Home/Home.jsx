@@ -1,7 +1,7 @@
 import React from "react";
 import theme from "@/constants/themes";
-import { texts } from "../../../constants/texts";
-import Button from "../button/Button";
+import { texts } from "../../constants/texts";
+import Button from "../../app/components/button/Button";
 import "./home.css";
 
 //------------------------descomentar onClick desde component Button.jsx cuando se necesite-------------
