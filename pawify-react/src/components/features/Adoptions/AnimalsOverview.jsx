@@ -13,7 +13,7 @@
     - [Fecha]: [Descripción de la modificación]
 */}
 import React, { useState } from "react";
-import "./Animalsoverwie.css";
+import "./Animalsoverview.css";
 import { FaPaw, FaHeart, FaRegHeart } from "react-icons/fa";
 import { useNavigate } from "react-router-dom";
 import api from "@/api/axios";

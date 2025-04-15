@@ -1,5 +1,5 @@
 import React from 'react';
-import './blog.css';
+import '../../../pages/Blog/Blog.css';
 
 const BlogPost = ({ post }) => {
 if (!post) return <div>Cargando artículo...</div>;

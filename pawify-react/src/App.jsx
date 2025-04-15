@@ -1,9 +1,9 @@
 import React from "react";
 import { BrowserRouter as Router, Route, Routes } from "react-router-dom";
-import Register from "./app/components/registerUser/Register";
-import Login from "./app/components/login/Login";
-import NavBar from "./app/components/navBar/navBar";
-import Footer from "./app/components/footer/Footer"; 
+import Register from "./components/features/Auth/RegisterUser/Register";
+import Login from "./components/features/Auth/Login/Login";
+import NavBar from "./components/layout/NavBar/NavBar";
+import Footer from "./components/layout/Footer/Footer";
 import "./App.css"; 
 import { 
   Adoptions, 
@@ -13,6 +13,7 @@ import {
   Home, 
   NotFound 
 } from "./pages";
+
 
 function App() {
   return (

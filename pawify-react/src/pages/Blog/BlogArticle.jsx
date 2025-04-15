@@ -1,8 +1,8 @@
 import React, { useState, useEffect } from 'react';
 import { useParams } from 'react-router-dom';
-import BlogPost from '@/app/components/pages/Blog/BlogPost';
-import mockPosts from '@/app/components/pages/Blog/mockPosts';
-import '@/app/components/pages/Blog/blog.css';
+import BlogPost from '@/components/features/Blog/BlogPost';
+import mockPosts from '@/components/features/Blog/mockPosts';
+import './Blog.css';
 
 
 const BlogArticle = () => {

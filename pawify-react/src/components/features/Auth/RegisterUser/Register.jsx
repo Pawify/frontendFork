@@ -15,13 +15,13 @@
 
 import React, { useState } from "react";
 import { Eye, EyeOff, PawPrint } from "lucide-react";
-import theme from "../../../constants/themes";
+import theme from "../../../../constants/themes";
 import { useForm } from "react-hook-form";
 import { Link, useNavigate } from "react-router-dom";
 import { zodResolver } from "@hookform/resolvers/zod";
 import { schema } from "./registerSchema";
 import toast, { Toaster } from "react-hot-toast";
-import api from '../../../api/axios'; 
+import api from '../../../../api/axios'; 
 
 export default function Register() {
   const {

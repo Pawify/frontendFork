@@ -13,7 +13,7 @@
 */}
 import React, { useState, useEffect } from "react";
 import "./Adoptions.css";
-import AnimalsOverview from "../../app/components/pages/Adoption/AnimalsOverwie";
+import AnimalsOverview from "../../components/features/Adoptions/AnimalsOverview";
 import Hero from "/Hero.png";
 import { getAllPets } from "@/api/api"; //Funcion que obtiene las mascotas de la base de datos
 

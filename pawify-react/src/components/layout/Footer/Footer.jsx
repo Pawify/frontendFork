@@ -20,7 +20,8 @@ import { Link } from "react-router-dom";
 import { FaFacebook, FaInstagram, FaTwitter, FaYoutube } from "react-icons/fa";
 import pawifyLogo from "/LogoPaw_blue.png";
 import theme from "../../../constants/themes";
-import Button from "../../components/button/Button";
+import Button from "@/components/ui/Button/Button";
+
 
 const Footer = () => {
   return (

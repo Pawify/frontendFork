@@ -1,4 +1,7 @@
-// Esto lo comento porque ahora con la reorganizacion de archivos me daba conflicto
+/* 
+Esto lo comento temporalmente porque causaba conflictos por la reorganización de archivos.
+Es posible que no sea necesario, pero lo dejo comentado por las dudas.
+*/
 /* // Exportar componentes
 export { default as BlogList } from './BlogList';
 export { default as BlogPost } from './BlogPost';
