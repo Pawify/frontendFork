@@ -11,7 +11,7 @@
     - [Fecha]: [Descripción de la modificación]
 */}
 import React, { useState, useEffect } from "react";
-import { useParams, useLocation, useNavigate } from "react-router-dom";
+import { useParams, useLocation, useNavigate, data } from "react-router-dom";
 import { FaHeart, FaRegHeart, FaFacebookF, FaTwitter, FaInstagram, FaWhatsapp, FaEye, FaFlag } from "react-icons/fa";
 import "./Animal.css";
 import api from "@/api/axios"; 
@@ -44,6 +44,7 @@ if (!animal && id) {
         setAnimal(data);
         setIsLoading(false);
     })
+    console.log(id)
     .catch(error => {
         console.error("Error al cargar detalles del animal:", error);
         setIsLoading(false);

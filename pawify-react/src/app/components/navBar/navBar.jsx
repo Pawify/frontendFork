@@ -14,6 +14,7 @@ const NavBar = () => {
   const handleProfileClick = () => {
     setMenuOpen(false); // Cierra el menú al hacer clic en el botón de perfil
     navigate('login'); // Aquí pones la ruta a la que quieres redirigir
+    window.scrollTo(0, 0);
   };
 
   const toggleMenu = () => {
@@ -23,6 +24,8 @@ const NavBar = () => {
   
   const handleNavLinkClick = () => {
     setMenuOpen(false); 
+    window.scrollTo(0, 0);
+
   };
 
   return (

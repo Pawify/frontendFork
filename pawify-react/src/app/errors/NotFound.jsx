@@ -5,8 +5,9 @@ export  default function  NotFound () {
 
   const { accent } = theme.colors;
 
-    return (
-      <section className="max-w-md mx-auto my-44 px-6 text-lg">
+    return ( 
+      <section className="max-w-md mx-auto my-44 px-6 text-lg" 
+      style={{ animation: 'fadeIn 1s' }}>
 
         <div className="flex justify-center">
           <img src={catdog404} alt="cat-dog-404" className="max-w-[80%] relative top-14 sm:top-10" />

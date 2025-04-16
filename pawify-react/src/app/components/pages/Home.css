@@ -8,6 +8,7 @@
   height: auto;
   margin: 80px auto;
   position: relative;
+  animation: fadeIn 1s;
 }
 
 .hero-content {
