@@ -33,6 +33,7 @@ setFavorites(prev => ({
 const handleAnimalClick = (animal) => {
 // Navigate to animal details page
 navigate(`/animal/${animal.id || 'details'}`, { state: { animal } });
+window.scrollTo(0, 0);
 };
 
 const limitedAnimals = animals?.slice(0, 30) || [];

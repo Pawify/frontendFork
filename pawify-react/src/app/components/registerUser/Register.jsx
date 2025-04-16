@@ -89,7 +89,7 @@ export default function Register() {
   return (
     <div
       className={`flex justify-center items-center min-h-screen`}
-      style={{ backgroundColor: background }}
+      style={{ backgroundColor: background, animation: 'backInLeft 1s', paddingTop: 40 }}
     >
       <div className={`w-full max-w-md rounded-2xl p-5`}>
         <div className="flex flex-col items-center mb-5">

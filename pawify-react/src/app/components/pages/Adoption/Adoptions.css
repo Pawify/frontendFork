@@ -9,6 +9,7 @@
   margin: 80px auto;
   position: relative;
   max-width: 1200px;
+  animation: fadeIn 1s;
 }
 
 /* Hero section */

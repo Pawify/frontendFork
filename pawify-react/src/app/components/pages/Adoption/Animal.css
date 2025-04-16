@@ -9,6 +9,7 @@
     height: auto;
     margin: 70px auto;
     position: relative;
+    animation: fadeIn 1s;
 }
 .animal-detail-container {
 margin: 0 auto;
