@@ -1,6 +1,5 @@
 import React from "react";
 import { BrowserRouter as Router, Route, Routes } from "react-router-dom";
-import Register from "./components/features/Auth/RegisterUser/Register";
 import NavBar from "./components/layout/NavBar/NavBar";
 import Footer from "./components/layout/Footer/Footer";
 import "./App.css"; 
@@ -11,7 +10,8 @@ import {
   BlogHome, 
   Home, 
   LoginPage, 
-  NotFound 
+  NotFound, 
+  RegisterPage
 } from "./pages";
 
 
@@ -26,7 +26,7 @@ function App() {
         <main className="main-content">
           <Routes>
             <Route path="/" element={<Home />} />
-            <Route path="/register" element={<Register />} />
+            <Route path="/register" element={<RegisterPage />} />
             <Route path="/login" element={<LoginPage />} />
             <Route path="/adopciones" element={<Adoptions />} />
             <Route path="/animal/:id" element={<Animal />} />

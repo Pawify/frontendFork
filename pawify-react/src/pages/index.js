@@ -5,7 +5,7 @@ import BlogHome from "./Blog/BlogHome"
 import NotFound from "./Errors/NotFound"
 import Home from "./Home/Home"
 import LoginPage from "./Login/LoginPage"
-
+import RegisterPage from "./Register/RegisterPage"
 
 export {
     Home,
@@ -14,5 +14,6 @@ export {
     Animal,
     BlogHome,
     BlogArticle,
-    LoginPage
+    LoginPage,
+    RegisterPage
 }
