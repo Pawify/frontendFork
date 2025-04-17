@@ -1,7 +1,6 @@
 import React from "react";
 import { BrowserRouter as Router, Route, Routes } from "react-router-dom";
 import Register from "./components/features/Auth/RegisterUser/Register";
-import Login from "./components/features/Auth/Login/Login";
 import NavBar from "./components/layout/NavBar/NavBar";
 import Footer from "./components/layout/Footer/Footer";
 import "./App.css"; 
@@ -11,6 +10,7 @@ import {
   BlogArticle, 
   BlogHome, 
   Home, 
+  LoginPage, 
   NotFound 
 } from "./pages";
 
@@ -27,7 +27,7 @@ function App() {
           <Routes>
             <Route path="/" element={<Home />} />
             <Route path="/register" element={<Register />} />
-            <Route path="/login" element={<Login />} />
+            <Route path="/login" element={<LoginPage />} />
             <Route path="/adopciones" element={<Adoptions />} />
             <Route path="/animal/:id" element={<Animal />} />
             <Route path="/blog" element={<BlogHome />} />
