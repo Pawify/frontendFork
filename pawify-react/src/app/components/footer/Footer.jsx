@@ -99,7 +99,7 @@ const Footer = () => {
               <FaFacebook />
             </a>
             <a
-              href="#"
+              href=""
               className="flex items-center justify-center w-9 h-9 rounded-full transition-all text-white hover:w-10 hover:h-10 hover:text-white"
               style={{ backgroundColor: theme.colors.secondary }}
               onMouseOut={(e) =>
@@ -128,6 +128,7 @@ const Footer = () => {
             <ul className="list-none p-0">
               <li className="mb-2">
                 <Link
+                  onClick={() => window.scrollTo(0, 0)}
                   to="/adopciones"
                   className="no-underline text-gray-600 hover:text-amber-300 transition-colors"
                 >
@@ -136,6 +137,7 @@ const Footer = () => {
               </li>
               <li className="mb-2">
                 <Link
+                  onClick={() => window.scrollTo(0, 0)}
                   to="/entrenamiento"
                   className="no-underline text-gray-600 hover:text-amber-300 transition-colors"
                 >
@@ -144,6 +146,7 @@ const Footer = () => {
               </li>
               <li className="mb-2">
                 <Link
+                  onClick={() => window.scrollTo(0, 0)}
                   to="/cuidado"
                   className="no-underline text-gray-600 hover:text-amber-300 transition-colors"
                 >
@@ -152,6 +155,7 @@ const Footer = () => {
               </li>
               <li className="mb-2">
                 <Link
+                  onClick={() => window.scrollTo(0, 0)}
                   to="/peluquerias"
                   className="no-underline text-gray-600 hover:text-amber-300 transition-colors"
                 >
@@ -160,6 +164,7 @@ const Footer = () => {
               </li>
               <li className="mb-2">
                 <Link
+                  onClick={() => window.scrollTo(0, 0)}
                   to="/accesorios"
                   className="no-underline text-gray-600 hover:text-amber-300 transition-colors"
                 >
@@ -168,6 +173,7 @@ const Footer = () => {
               </li>
               <li className="mb-2">
                 <Link
+                  onClick={() => window.scrollTo(0, 0)}
                   to="/tienda"
                   className="no-underline text-gray-600 hover:text-amber-300 transition-colors"
                 >
@@ -182,6 +188,7 @@ const Footer = () => {
             <ul className="list-none p-0">
               <li className="mb-2">
                 <Link
+                  onClick={() => window.scrollTo(0, 0)}
                   to="/mi-cuenta"
                   className="no-underline text-gray-600 hover:text-amber-300 transition-colors"
                 >
@@ -190,6 +197,7 @@ const Footer = () => {
               </li>
               <li className="mb-2">
                 <Link
+                  onClick={() => window.scrollTo(0, 0)}
                   to="/contacto"
                   className="no-underline text-gray-600 hover:text-amber-300 transition-colors"
                 >
@@ -198,6 +206,7 @@ const Footer = () => {
               </li>
               <li className="mb-2">
                 <Link
+                  onClick={() => window.scrollTo(0, 0)}
                   to="/faq"
                   className="no-underline text-gray-600 hover:text-amber-300 transition-colors"
                 >
@@ -212,6 +221,7 @@ const Footer = () => {
             <ul className="list-none p-0">
               <li className="mb-2">
                 <Link
+                  onClick={() => window.scrollTo(0, 0)}
                   to="/quienes-somos"
                   className="no-underline text-gray-600 hover:text-amber-300 transition-colors"
                 >
@@ -220,6 +230,7 @@ const Footer = () => {
               </li>
               <li className="mb-2">
                 <Link
+                  onClick={() => window.scrollTo(0, 0)}
                   to="/voluntarios"
                   className="no-underline text-gray-600 hover:text-amber-300 transition-colors"
                 >
@@ -228,6 +239,7 @@ const Footer = () => {
               </li>
               <li className="mb-2">
                 <Link
+                  onClick={() => window.scrollTo(0, 0)}
                   to="/blog"
                   className="no-underline text-gray-600 hover:text-amber-300 transition-colors"
                 >
@@ -236,6 +248,7 @@ const Footer = () => {
               </li>
               <li className="mb-2">
                 <Link
+                  onClick={() => window.scrollTo(0, 0)}
                   to="/legal"
                   className="no-underline text-gray-600 hover:text-amber-300 transition-colors"
                 >

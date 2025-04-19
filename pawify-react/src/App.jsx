@@ -9,6 +9,10 @@ import Footer from "./app/components/footer/Footer";
 import Adoptions from "./app/components/pages/Adoption/Adoptions";
 import Animal from "./app/components/pages/Adoption/Animal";
 import "./App.css"; 
+import Voluntarios from "./app/components/pages/Voluntarios/Voluntarios";
+import Blog from "./app/components/pages/Blog/Blog";
+import Servicios from "./app/components/pages/Servicios/Servicios";
+import Tienda from "./app/components/pages/Tienda/Tienda";
 
 function App() {
   return (
@@ -25,6 +29,10 @@ function App() {
             <Route path="/login" element={<Login />} />
             <Route path="/adopciones" element={<Adoptions />} />
             <Route path="/animal/:id" element={<Animal />} />
+            <Route path="/voluntarios" element={<Voluntarios />} />
+            <Route path="/blog" element={<Blog />} />
+            <Route path="/servicios" element={<Servicios />} />
+            <Route path="/tienda" element={<Tienda />} />
             <Route path="*" element={<NotFound />} />
           </Routes>
         </main>

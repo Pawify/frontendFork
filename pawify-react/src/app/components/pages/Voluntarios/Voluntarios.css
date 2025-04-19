@@ -1,0 +1,127 @@
+/*Estilos creados por Jhonny Bracho*/
+
+#voluntarios-container {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    width: 90%;
+    height: auto;
+    margin: 80px auto;
+    position: relative;
+    max-width: 1200px;
+    gap: 80px;
+    animation: fadeIn 1s;
+}
+
+#voluntarios-esl {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 50px;
+    gap: 10px;
+}
+
+#voluntarios-talento {
+    font-size: 45px;
+    font-weight: 800;
+}
+
+#speaker-img {
+    height: 100%;
+}
+
+#mail-img {
+    height: 50px;
+    margin-top: 10px;
+}
+
+#voluntarios-cards {
+    display: flex;
+    width: 100%;
+    height: auto;
+    flex-wrap: wrap;
+    gap: 30px;
+    justify-content: center;
+    align-items: center;
+}
+
+#voluntarios-mail {
+    display: flex;
+    justify-content: center;
+    gap: 10px;
+}
+
+/* ======= Tablets (hasta 1024px) ======= */
+@media (max-width: 1024px) {
+    #voluntarios-talento {
+      font-size: 36px;
+      text-align: center;
+    }
+  
+    #mail-img {
+      height: 40px;
+    }
+  
+    #voluntarios-container {
+      gap: 60px;
+    }
+  
+    #voluntarios-cards {
+      gap: 20px;
+    }
+  }
+  
+/* ======= Móviles grandes (hasta 768px) ======= */
+@media (max-width: 768px) {
+    #voluntarios-talento {
+      font-size: 28px;
+      text-align: center;
+    }
+  
+    #mail-img {
+      height: 35px;
+    }
+  
+    #speaker-img {
+      height: 35px;
+    }
+  
+    #voluntarios-esl {
+      flex-direction: column;
+      height: auto;
+      gap: 5px;
+    }
+  
+    #voluntarios-mail {
+      flex-direction: column;
+      align-items: center;
+      text-align: center;
+    }
+  
+    #voluntarios-container {
+      gap: 40px;
+    }
+}
+  
+/* ======= Móviles pequeños (hasta 480px) ======= */
+@media (max-width: 480px) {
+    #voluntarios-talento {
+      font-size: 22px;
+    }
+  
+    #mail-img,
+    #speaker-img {
+      height: 30px;
+    }
+  
+    #voluntarios-container {
+      width: 95%;
+      gap: 30px;
+      margin: 50px auto;
+    }
+  
+    #voluntarios-cards {
+      flex-direction: column;
+    }
+}
