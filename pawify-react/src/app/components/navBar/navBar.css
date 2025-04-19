@@ -1,11 +1,4 @@
 /*Estilos de NavBar creado por Jhonny Bracho*/
-@font-face {
-  font-family: 'Core-Rhino';
-  src: url('/fonts/Core-Rhino.woff2') format('woff2'),
-      url('/fonts/Core-Rhino.woff') format('woff');
-  font-weight: normal;
-  font-style: normal;
-}
 
 #nav {
   position: fixed; 

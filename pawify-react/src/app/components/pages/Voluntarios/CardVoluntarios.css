@@ -1,0 +1,162 @@
+/*Estilos creados por Jhonny Bracho*/
+
+#voluntarios-card {
+    width: 380px;
+    height: 330px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: flex-start;
+    padding: 20px;
+    border-radius: 20px;
+    box-shadow: 20px 20px 30px rgba(0, 0, 0, 0.181);
+    background-color: #F2F6F9;
+    overflow: hidden;
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+    box-sizing: border-box;
+    color: #333;
+}
+  
+#voluntarios-card:hover {
+    transform: translateY(-5px);
+  box-shadow: 0 6px 12px rgba(0, 0, 0, 0.15);
+}
+  
+#card-title {
+    font-size: 22px;
+    text-align: center;
+    font-weight: 600;
+    margin-bottom: 10px;
+    min-height: 50px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+  
+#card-desc {
+    font-size: 14px;
+    text-align: center;
+    margin-bottom: 20px;
+    min-height: 60px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+  
+#tareas-list {
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
+    width: 100%;
+    flex: 1;
+}
+  
+#tareas-item {
+    display: flex;
+    gap: 10px;
+    align-items: center;
+    width: 100%;
+    justify-content: center;
+    padding-bottom: 10px;
+    border-bottom: 1px solid rgba(0, 0, 0, 0.237);
+    font-size: 15px;
+}
+  
+#tareas-item:last-child {
+    border-bottom: none;
+}
+  
+#li-card {
+    width: 90%;
+    font-weight: 500;
+    text-align: left;
+}
+  
+#li-card:hover {
+    color: #309ac8;
+    cursor: default;
+}
+  
+#checklist-img {
+    width: 8%;
+}
+
+/* ======= Tablets (hasta 1024px) ======= */
+@media (max-width: 1024px) {
+    #voluntarios-card {
+      width: 320px;
+      height: auto;
+      padding: 16px;
+    }
+  
+    #card-title {
+      font-size: 20px;
+      min-height: auto;
+    }
+  
+    #card-desc {
+      font-size: 13px;
+      min-height: auto;
+    }
+  
+    #tareas-item {
+      font-size: 14px;
+    }
+  
+    #checklist-img {
+      width: 10%;
+    }
+  }
+  
+/* ======= Móviles (hasta 768px) ======= */
+@media (max-width: 768px) {
+    #voluntarios-card {
+      width: 100%;
+      max-width: 350px;
+      height: auto;
+      padding: 16px;
+    }
+  
+    #card-title {
+      font-size: 18px;
+    }
+  
+    #card-desc {
+      font-size: 13px;
+      margin-bottom: 15px;
+    }
+  
+    #tareas-item {
+      font-size: 13px;
+    }
+  
+    #checklist-img {
+      width: 12%;
+    }
+}
+  
+/* ======= Móviles pequeños (hasta 480px) ======= */
+@media (max-width: 480px) {
+    #voluntarios-card {
+      width: 100%;
+      max-width: 320px;
+      padding: 14px;
+      border-radius: 16px;
+    }
+  
+    #card-title {
+      font-size: 16px;
+    }
+  
+    #card-desc {
+      font-size: 12px;
+    }
+  
+    #tareas-item {
+      font-size: 12px;
+    }
+  
+    #checklist-img {
+      width: 14%;
+    }
+}  
